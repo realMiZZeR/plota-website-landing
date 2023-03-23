@@ -1,0 +1,26 @@
+@use '@/styles/variables' as v;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 22px;
+    width: 100%;
+}
+
+.logo {
+    width: 73px;
+    height: 23px;
+}
+
+.nav {
+    position: relative;
+}
+
+.link {
+    color: #FFF;
+    font-family: v.$poppins;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin-left: 52px;
+}
