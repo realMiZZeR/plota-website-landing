@@ -1,0 +1,64 @@
+@use '@/styles/variables' as v;
+@use '@/styles/mixins' as m;
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 682px;
+  background-image: url('../../assets/images/hero-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.container {
+  @extend %container;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  @include m.font(v.$poppins, 6rem, 700, #FFF);
+  line-height: 7.5rem;
+  text-transform: uppercase;
+  margin-bottom: 115px;
+}
+
+.decorations {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.decorations img {
+  position: absolute;
+}
+
+.decorations img:first-child {
+  right: 30%;
+  bottom: 25%;
+}
+
+$marginRight: 5%;
+$marginTop: 10%;
+
+.decorations img:nth-child(2) {
+  top: $marginTop;
+  right: calc($marginRight * -1);
+}
+
+.decorations img:nth-child(3) {
+  bottom: calc($marginTop * -1);
+  right: $marginRight;
+  transform: rotate(60deg);
+}
+
+@media screen and (max-width: 1400px) {
+  .title {
+    font-size: 4rem;
+  }
+}

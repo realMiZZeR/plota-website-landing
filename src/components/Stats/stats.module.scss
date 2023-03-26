@@ -1,0 +1,32 @@
+@use '@/styles/variables' as v;
+@use '@/styles/mixins' as m;
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 193px;
+  padding: 0 120px;
+  background-image: url('../../assets/images/hero-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.item {
+  text-align: center;
+}
+
+.title {
+  @include m.font(v.$poppins, 3rem, 600, #FFF);
+  line-height: 5rem;
+  margin-bottom: 10px;
+}
+
+.description {
+  @include m.font(v.$poppins, 1rem, 400, #FFF);
+}
+

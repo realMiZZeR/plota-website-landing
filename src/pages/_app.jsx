@@ -1,8 +1,9 @@
 // Variables
 import '@/styles/_variables.scss'
+import '@/styles/_mixins.scss'
 
 // Fonts
-import '@/styles/fonts/poppins.scss'
+import '../styles/fonts/poppins.scss'
 
 // Utilities
 import '@/styles/globals.scss'
