@@ -1,0 +1,27 @@
+@use '@/styles/variables' as v;
+@use '@/styles/mixins' as m;
+
+.wrapper {
+  width: 100%;
+}
+
+.container {
+  @extend %container;
+}
+
+.title {
+  @include m.font(v.$poppins, 3rem, 600, #333333);
+  line-height: 4rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.title strong {
+  color: #F0643C;
+}
+
+.list {
+  position: relative;
+  width: 100%;
+}

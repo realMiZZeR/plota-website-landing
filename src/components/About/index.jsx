@@ -4,6 +4,7 @@ import Stats from '@/components/Stats';
 
 import customerLogo from '@/assets/images/customer-logo.png';
 import styles from './about.module.scss';
+import Advantages from '../Advantages';
 
 const About = () => {
   return (
@@ -28,6 +29,7 @@ const About = () => {
         </div>
 
         <Stats />
+        <Advantages />
       </div>
 
     </article>

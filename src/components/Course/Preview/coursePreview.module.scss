@@ -1,0 +1,47 @@
+@use '@/styles/variables' as v;
+@use '@/styles/mixins' as m;
+
+.wrapper {
+  position: relative;
+  padding: 15px 20px;
+  border: 1px solid #FFF;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.imagePreview {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.hovered .background {
+  top: 0; left: 0;
+  transition: .5s top ease,
+              .5s left ease;
+} 
+
+.background {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 100%; left: 100%;
+}
+
+.tag {
+  @include m.font(v.$poppins, 1rem, 400, #FFF);
+  display: block;
+  border: 1px solid #FFF;
+  border-radius: 50px;
+  padding: .7rem 1.2rem;
+  margin-bottom: 24px;
+}
+
+.title {
+  @include m.font(v.$poppins, 1.5rem, 600, #FFF);
+  word-break: break-all;
+  line-height: 2rem;
+  text-transform: uppercase;
+}

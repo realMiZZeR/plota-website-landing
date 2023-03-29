@@ -1,0 +1,38 @@
+@use '@/styles/variables' as v;
+@use '@/styles/mixins' as m;
+
+.section {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 59px;
+  margin-bottom: 36px;
+}
+
+.section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.info {
+  width: 100%;
+}
+
+.title {
+  @include m.font(v.$poppins, 2rem, 600, #333333);
+  margin-top: 24px;
+  margin-bottom: 22px;
+  text-transform: uppercase
+}
+
+.description {
+  @include m.font(v.$poppins, 1rem, 400, #333333);
+  line-height: 32px;
+}
+
+.image {
+  width: 100%;
+  height: 326px;
+  background-color: #E0E0E0;
+  border-radius: 12px;
+  overflow: hidden;
+}

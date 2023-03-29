@@ -5,22 +5,36 @@
   position: relative;
   top: -20px;
   width: 100%;
-  height: 300px;
   background-color: #FFF;
   border-radius: 25px;
+  overflow: hidden;
+  // animation: 1s identifier forwards;
+  animation-delay: 3s;
+  z-index: 1;
+}
+
+@keyframes identifier {
+  50% {
+    transform: translateY(calc(-100vh - 50px));
+  }
+  100% {
+    transform: translateY(calc(-100vh - 50px));
+    // border-radius: 0;
+  }
 }
 
 .container {
   @extend %container;
 
-  gap: 31px;
+  display: flex;
+  flex-direction: column;
+  gap: 102px;
   padding-top: 158px;
 }
 
 .about {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 108px;
 }
 
 .info {
@@ -28,8 +42,9 @@
 }
 
 .title {
-  @include m.font(v.$poppins, 3rem, 600, #000);
+  @include m.font(v.$poppins, 3rem, 600, #333333);
   margin-bottom: 24px;
+  text-transform: uppercase;
 }
 
 .description {
