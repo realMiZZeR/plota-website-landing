@@ -3,36 +3,52 @@
 
 .wrapper {
   position: relative;
+  width: 100%;
   padding: 15px 20px;
   border: 1px solid #FFF;
   border-radius: 12px;
   overflow: hidden;
+  scroll-snap-align: start;
+  z-index: 1;
 }
 
 .imagePreview {
+  position: relative;
+  width: 100%;
+  height: 250px;
   border-radius: 12px;
-  overflow: hidden;
   margin-bottom: 24px;
+  overflow: hidden;
 }
 
-.hovered .background {
-  top: 0; left: 0;
-  transition: .5s top ease,
-              .5s left ease;
-} 
-
-.background {
+.imagePreview img {
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+
+.background {
+  position: absolute;
+  bottom: -100%; left: 0;
+  width: 100%;
+  height: 100%;
   z-index: -1;
-  top: 100%; left: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 1s bottom ease, .5s border-radius ease;
+}
+
+.wrapper:hover .background {
+  bottom: 0;
+  border-radius: 0;
 }
 
 .tag {
   @include m.font(v.$poppins, 1rem, 400, #FFF);
   display: block;
+  width: min-content;
   border: 1px solid #FFF;
   border-radius: 50px;
   padding: .7rem 1.2rem;

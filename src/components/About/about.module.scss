@@ -7,20 +7,9 @@
   width: 100%;
   background-color: #FFF;
   border-radius: 25px;
-  overflow: hidden;
-  // animation: 1s identifier forwards;
-  animation-delay: 3s;
   z-index: 1;
-}
-
-@keyframes identifier {
-  50% {
-    transform: translateY(calc(-100vh - 50px));
-  }
-  100% {
-    transform: translateY(calc(-100vh - 50px));
-    // border-radius: 0;
-  }
+  scroll-snap-align: start;
+  scroll-margin-bottom: 300px;
 }
 
 .container {

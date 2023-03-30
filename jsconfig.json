@@ -1,9 +1,14 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ES6",
     "paths": {
-      "@/*": ["/src/*"],
-      "@/fonts/*": ["./src/assets/fonts/*"],
-      "@/images/*": ["./src/assets/images/*"],
-    }
-  }
+      "@/*":  ["./src/*"],
+      "@/styles/*": ["src/assets/styles/*"],
+      "@/fonts/*": ["src/assets/fonts/*"],
+      "@/images/*": ["src/assets/images/*"],
+    },
+  },
+  "include": ["src/**/*.scss", "src/**/*.jsx"],
+  "exclude": ["node_modules"],
 }

@@ -1,10 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Head from 'next/head'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import ParallaxScroll from '../HOC/ParallaxScroll';
-import Advantages from '../components/Advantages';
 import PopularCourses from '../components/PopularCourses';
 
 const Home = () => {

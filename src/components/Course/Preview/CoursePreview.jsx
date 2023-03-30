@@ -6,23 +6,18 @@ import Background from '@/assets/images/hero-background.png';
 
 const CoursePreview = ({ title, tag, imageSrc, imageAlt }) => {
 
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <section 
-      onClick={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className={`${styles.wrapper} ${isHovered ? 'hovered' : ''}`} 
+      className={styles.wrapper}
     >
       <div className={styles.imagePreview}>
         <Image src={imageSrc} alt={imageAlt} />
       </div>
       <strong className={styles.tag}>{ tag }</strong>
-      <h4 className={styles.title}>{ title }</h4>
+      <h4 className={styles.title}>{ title }</h4>   
       <div className={styles.background}>
         <Image src={Background} alt='' />
-      </div>
-      
+      </div>   
     </section>
   )
 }
