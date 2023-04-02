@@ -1,16 +1,13 @@
 import Image from 'next/image';
-import Header from '@/components/Header';
-import Stats from '@/components/Stats';
+import Stats from '@/components/About/Stats/Stats';
+import Activity from '@/components/About/Activity/Activity';
 
 import customerLogo from '@/assets/images/customer-logo.png';
 import styles from './about.module.scss';
-import Advantages from '../Advantages';
 
 const About = () => {
   return (
     <article className={styles.wrapper}>
-      <Header isAlternative={false} />
-
       <div className={styles.container}>
         <div className={styles.about}>
           <div className={styles.info}>
@@ -29,7 +26,7 @@ const About = () => {
         </div>
 
         <Stats />
-        <Advantages />
+        <Activity />
       </div>
 
     </article>

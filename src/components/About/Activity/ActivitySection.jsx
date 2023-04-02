@@ -1,6 +1,6 @@
-import styles from './advantagesSection.module.scss'
+import styles from './activitySection.module.scss'
 
-const AdvantagesSection = ({ title, desciption, imageSrc, imageAlt }) => {
+const ActivitySection = ({ title, desciption, imageSrc, imageAlt }) => {
 
   return (
     <section className={styles.section}>
@@ -15,4 +15,4 @@ const AdvantagesSection = ({ title, desciption, imageSrc, imageAlt }) => {
   );
 }
 
-export default AdvantagesSection;
+export default ActivitySection;

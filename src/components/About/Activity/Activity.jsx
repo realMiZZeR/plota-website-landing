@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import styles from './advantages.module.scss'
-import AdvantagesSection from './AdvantagesSection';
+import styles from './activity.module.scss'
+import ActivitySection from './ActivitySection';
 
-const Advantages = () => {
+const Activity = () => {
 
   return (
     <article className={styles.wrapper}>
@@ -11,25 +11,25 @@ const Advantages = () => {
           Only an <strong>integrated</strong> <br /> <strong>approach</strong> achieves the <br /> desired results
         </h3>
         <div className={styles.list}>
-          <AdvantagesSection
+          <ActivitySection
             title={"Wissen & Lernen"}
             desciption={"Wenn Wissensmanagement nicht strategisch geplant und an den jeweiligen Reifegrad von Organisationen angepasst wird, kann dies deren Existenz gefährden.Wir begreifen Lernen als Performance Support und unterstützen dabei, Wissen entsprechend dem individuellen Bedarf verfügbar zu machen."}
             imageSrc={``}
             imageAlt={"Image"}
           />
-          <AdvantagesSection
+          <ActivitySection
             title={"Person"}
             desciption={"Im Fokus unserer ganzheitlichen Betrachtung steht der Mensch – die gezielte Förderung und Weiterentwicklung seiner Potenziale und Kompetenzen ist Schlüsselelement organisationalen Erfolgs und individueller Zufriedenheit."}
             imageSrc={``}
             imageAlt={"Image"}
           />
-          <AdvantagesSection
+          <ActivitySection
             title={"Collaboration"}
             desciption={"Wenn Wissensmanagement nicht strategisch geplant und an den jeweiligen Reifegrad von Organisationen angepasst wird, kann dies deren Existenz gefährden.Wir begreifen Lernen als Performance Support und unterstützen dabei, Wissen entsprechend dem individuellen Bedarf verfügbar zu machen."}
             imageSrc={``}
             imageAlt={"Image"}
           />
-          <AdvantagesSection
+          <ActivitySection
             title={"Change-Management"}
             desciption={"Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet werden.Erfolgreiche Veränderung passiert nicht von allein, sondern muss geplant und begleitet werden.Wir sorgen dafür, dass Veränderungsprozesse strategisch aufgesetzt und durchgeführt werden."}
             imageSrc={``}
@@ -41,4 +41,4 @@ const Advantages = () => {
   )
 }
 
-export default Advantages;
+export default Activity;
