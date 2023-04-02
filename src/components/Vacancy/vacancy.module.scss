@@ -1,0 +1,78 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.vacancy {
+  transform: rotate(0);
+  transition: transform .5 ease;
+}
+
+.arrow {
+  @extend %reset-button;
+  cursor: pointer;
+}
+
+.vacancy.active .arrow {
+  transform: rotate(90deg);
+}
+
+.vacancy + .vacancy {
+  margin-bottom: 56px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  padding: 16px 0;
+}
+
+.title {
+  @include font($poppins, 3rem, 700, #000);
+  line-height: 4rem;
+}
+
+.content {
+  margin-top: 56px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .5s ease;
+}
+
+.vacancy.active .content {
+  max-height: 300px;
+}
+
+.description {
+  @include font($poppins, 1rem, 400, #333);
+  line-height: 2rem;
+  width: 380px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.location {
+  @include font($poppins, 1rem, 600, $gray);
+  line-height: 2rem;
+}
+
+.link {
+  @include font($poppins, 1rem, 400, $gray);
+  border: 1px solid $gray;
+  border-radius: 50px;
+  line-height: 2rem;
+  padding: 4px 24px;
+  text-decoration: none;
+  transition: background .3s ease, color .3s ease;
+}
+
+.link:hover {
+  color: #FFF;
+  background-color: $gray;
+}

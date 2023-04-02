@@ -4,7 +4,10 @@ import Header from '@/components/Header/Header'
 import Hero from '@/components/Hero/Hero';
 import About from '@/components/About/About';
 import ParallaxScroll from '../HOC/ParallaxScroll';
-import PopularCourses from '@/components/PopularCourses/PopularCourses';
+import PopularCourses from '@/components/Course/PopularCourses/PopularCourses';
+import Advantages from '@/components/Advantages/Advantages';
+import AboutTeam from '@/components/Team/About/AboutTeam';
+import JoinTeam from '@/components/Team/Join/JoinTeam';
 
 const Home = () => {
 
@@ -24,6 +27,9 @@ const Home = () => {
           <Hero />
           <About />
           <PopularCourses />
+          <Advantages />
+          <AboutTeam />
+          <JoinTeam />
         </main>
       </ParallaxScroll>
       <footer>

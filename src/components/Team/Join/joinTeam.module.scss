@@ -1,0 +1,36 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.wrapper {
+  @extend %screen-scroll;
+  padding: 89px 0;
+  background-color: #F3F3F3;
+}
+
+.container {
+  @extend %container;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 90px;
+}
+
+.title {
+  @include font($poppins, 3rem, 700, #000);
+  line-height: 4.5rem;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.description {
+  @include font($poppins, 1rem, 400, #000);
+  line-height: 2rem;
+  flex-shrink: 2;
+}
+
+.vacancies {
+  position: relative;
+}

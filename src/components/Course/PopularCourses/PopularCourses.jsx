@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import CoursePreview from '../Course/Preview/CoursePreview'
+import CoursePreview from '../Preview/CoursePreview'
 
 import styles from './popularCourses.module.scss'
 import ImageTest from '@/assets/images/course-preview-test.png'

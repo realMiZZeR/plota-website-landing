@@ -2,14 +2,13 @@
 @import '@/styles/mixins';
 
 .content {
+  @extend %screen-scroll;
   position: relative;
   width: 100%;
-  height: 100vh;
   background-image: url('../../assets/images/hero-background.png');
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
-  scroll-snap-align: start;
 }
 
 .container {
