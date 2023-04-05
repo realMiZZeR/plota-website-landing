@@ -26,18 +26,21 @@ const PopularCourses = () => {
         <div className={styles.courses}>
           <CoursePreview
             title={<span>Agile <br /> Methodology</span>}
+            description={''}
             tag={"Management"}
             imageSrc={ImageTest}
             imageAlt={"Image"}
           />
           <CoursePreview
             title={<span>Test <br /> Management</span>}
+            description={''}
             tag={"Management"}
             imageSrc={ImageTest}
             imageAlt={"Image"}
           />
           <CoursePreview
             title={<span>SAC <br /> SAP Analytics</span>}
+            description={'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben'}
             tag={"Management"}
             imageSrc={ImageTest}
             imageAlt={"Image"}

@@ -4,18 +4,17 @@ import triangle from '@/assets/images/hero-triangle.svg';
 import noBodyTriangle from '@/assets/images/hero-triangle-no-body.svg';
 import styles from './hero.module.scss'
 
-const Hero = () => {
+const Hero = ({ title, hasDecorations = false }) => {
 
   return (
     <article className={styles.content}>
       <div className={styles.container}>
         <h2 className={styles.title}>
-          E-education for <br /> 
-          corporate clients
+          { title }
         </h2>
       </div>
 
-      <div className={styles.decorations}>
+      <div className={`${hasDecorations ? styles.decorations : styles.decorationsHide}`}>
           <Image src={triangle} alt="" />
           <Image src={noBodyTriangle} alt="" />
           <Image src={noBodyTriangle} alt="" />

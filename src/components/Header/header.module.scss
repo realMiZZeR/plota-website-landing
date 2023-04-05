@@ -1,19 +1,12 @@
 @use '@/styles/variables' as v;
 @use '@/styles/mixins' as m;
 
-%standard {
-    position: absolute;
+.wrapper {
+    position: fixed;
+    z-index: 99;
     width: 100%;
     height: 70px;
-    z-index: 99;
-}
-
-.main {
-    @extend %standard;
-}
-
-.alternative {
-    @extend %standard;
+    // mix-blend-mode: difference;
 }
 
 .container {
@@ -37,7 +30,6 @@
     position: relative;
     @include m.font(v.$poppins, 1rem, 400, #FFF);
     line-height: 1.5rem;
-    mix-blend-mode: difference;
     text-decoration: none;
     text-transform: uppercase;
     margin-left: 52px;

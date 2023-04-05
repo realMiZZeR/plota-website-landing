@@ -1,0 +1,16 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.wrapper {
+  width: 100%;
+  height: 400px;
+  background-image: url('../../assets/images/hero-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+}
+
+.container {
+  @extend %container;
+}
