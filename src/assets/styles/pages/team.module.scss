@@ -1,0 +1,13 @@
+.pride .image {
+  height: 300px;
+}
+
+.quality {
+  color: #FFF;
+  background-color: #333333;
+}
+
+.quality > * {
+  flex-direction: row-reverse;
+  padding-top: 110px;
+}

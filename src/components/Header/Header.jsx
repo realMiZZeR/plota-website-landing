@@ -6,6 +6,7 @@ import styles from "./header.module.scss"
 const Header = ({ color = "white" }) => {
 
     const [triangleColor, setTriangleColor] = useState("#F0643C")
+    // const [headerColor, setHeaderColor] = useState("white");
 
     useEffect(() => {
         setTriangleColor(color === "black" ? "#F0643C" : "white");

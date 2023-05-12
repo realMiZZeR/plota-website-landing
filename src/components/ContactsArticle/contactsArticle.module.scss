@@ -1,0 +1,41 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.wrapper {
+  @extend %screen-scroll;
+  position: relative;
+  width: 100%;
+  padding: 60px 0;
+}
+
+.container {
+  @extend %container;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.text {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+
+.hint {
+  @include font($poppins, 1rem, 400, #333);
+  line-height: 2rem;
+  width: 50%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  position: relative;
+}
+
+.infoItem {
+  @include font($poppins, 1rem, 400, #333);
+  line-height: 2rem;
+}

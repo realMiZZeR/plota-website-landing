@@ -1,15 +1,21 @@
 import { useInView } from 'react-intersection-observer';
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Head from 'next/head'
 import Header from '@/components/Header/Header'
 import Hero from '@/layouts/Hero/Hero';
 import About from '@/components/About/About';
 import PopularCourses from '@/components/Course/PopularCourses/PopularCourses';
-import Advantages from '@/components/Advantages/Advantages';
+import SimpleList from '@/layouts/SimpleList/SimpleList';
 import AboutTeam from '@/components/Team/About/AboutTeam';
 import JoinTeam from '@/components/Team/Join/JoinTeam';
 import Footer from '@/components/Footer/Footer';
 import { InView } from 'react-intersection-observer';
+
+const simpleListItems = [
+  {imageSrc: '', title: 'Easy learning format', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet werden.Erfolgreiche'},
+  {imageSrc: '', title: 'Individual approach', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet'},
+  {imageSrc: '', title: 'Qualified tutors', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet werden.Erfolgreiche Veränderung'},
+]
 
 const Home = () => {
 
@@ -41,7 +47,10 @@ const Home = () => {
         </InView>
 
         <InView threshold={0.3} onChange={() => setHeaderColor("black")}>
-          <Advantages />
+          <SimpleList
+            title={'Our advantages'}
+            items={simpleListItems}
+          />
         </InView>
 
         <InView threshold={0.3} onChange={() => setHeaderColor("black")}>

@@ -1,0 +1,32 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 24px;
+  width: 591px;
+  height: 100%;
+  background-color: #F3F3F3;
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 48px;
+}
+
+.group {
+  display: flex;
+  gap: 36px;
+  width: 100%;
+}
+
+.button {
+  @extend %reset-button;
+  @include font($poppins, 1rem, 400, #949494);
+  line-height: 2.5rem;
+  width: 100%;
+  height: 44px;
+  border: 1px solid #949494;
+  border-radius: 50px;
+  padding: 4px 24px;
+}

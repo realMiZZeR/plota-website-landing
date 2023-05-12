@@ -9,6 +9,7 @@
   border-radius: 25px;
   z-index: 1;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .container {
@@ -23,6 +24,7 @@
 .about {
   display: flex;
   justify-content: space-between;
+  gap: 72px;
 }
 
 .info {
@@ -31,8 +33,7 @@
 
 .title {
   @include m.font(v.$poppins, 3rem, 600, #333333);
-  margin-bottom: 24px;
-  text-transform: uppercase;
+  margin-bottom: 36px;
 }
 
 .description {

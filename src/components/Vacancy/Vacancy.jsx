@@ -15,7 +15,7 @@ const Vacancy = ({ title, description, location, linkHref, linkName }) => {
         <h3 className={styles.title}>{ title }</h3>
         <button onClick={arrowClickHandler} className={styles.arrow}>
           <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10.5 13.5L17 7M17 7L10.5 0.5M17 7H1" stroke="#333333" stroke-linecap="round"/>
+            <path d="M10.5 13.5L17 7M17 7L10.5 0.5M17 7H1" stroke="#333333" strokeLinecap="round"/>
           </svg>
         </button>
       </div>

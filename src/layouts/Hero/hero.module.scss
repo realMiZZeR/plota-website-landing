@@ -7,8 +7,12 @@
   width: 100%;
   background-image: url('../../assets/images/hero-background.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 130%;
   overflow: hidden;
+}
+
+.content.textInversed {
+  background: none;
 }
 
 .container {
@@ -18,11 +22,22 @@
   height: 100%;
 }
 
+.content.textInversed .title {
+  background-image: url('../../assets/images/hero-background.png');
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .title {
   @include font($poppins, 6rem, 700, #FFF);
   line-height: 7.5rem;
-  text-transform: uppercase;
   margin-bottom: 115px;
+  transform: translateY(-50px);
+  opacity: 0;
+  animation: animateTitle 1s ease forwards;
+  animation-delay: 1s;
 }
 
 .decorations {
@@ -35,29 +50,40 @@
 
 .decorations img {
   position: absolute;
+  bottom: 50px; right: 0;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: decorationsAppear .8s ease forwards;
 }
 
-.decorations img:first-child {
-  right: 30%;
-  bottom: 25%;
+.decorations img:nth-child(1) {
+  bottom: 200px;
+  right: 400px;
+  animation-delay: 1s;
 }
-
-$marginRight: 5%;
-$marginTop: 10%;
 
 .decorations img:nth-child(2) {
-  top: $marginTop;
-  right: calc($marginRight * -1);
+  right: 0;
+  animation-delay: 1.4s;
 }
 
 .decorations img:nth-child(3) {
-  bottom: calc($marginTop * -1);
-  right: $marginRight;
-  transform: rotate(60deg);
+  right: 120px;
+  bottom: -160px;
+  transform: rotate(60deg)!important;
+  animation-delay: 1.6s;
 }
 
-@media screen and (max-width: 1400px) {
-  .title {
-    font-size: 4rem;
+@keyframes animateTitle {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes decorationsAppear {
+  100% {
+    transform: translate(0);
+    opacity: 1;
   }
 }

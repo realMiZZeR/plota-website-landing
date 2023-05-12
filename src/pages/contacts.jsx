@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '@/components/Header/Header'
 import Hero from '@/layouts/Hero/Hero';
+import ContactsAritcle from '@/components/ContactsArticle/ContactsArticle';
 
 const Contacts = () => {
 
@@ -15,9 +16,11 @@ const Contacts = () => {
       <Header />
       <main className='main'>
         <Hero
-          title={<>It all starts with Hello</>}
+          title={<>It all<br/>starts with<br/>Hello</>}
           hasDecorations={false}
-          />
+          textInversed={true}
+        />
+        <ContactsAritcle />
       </main>
       {/* <Footer /> */}
     </>

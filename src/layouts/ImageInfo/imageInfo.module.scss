@@ -1,0 +1,52 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.wrapper {
+  @extend %screen-scroll;
+  width: 100%;
+  padding-top: 70px;
+  padding-bottom: 50px;
+}
+
+.container {
+  @extend %container;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  gap: 40px;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #E0E0E0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.image img {
+  @extend %img-fit;
+}
+
+.info {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  @include font($poppins, 3rem, 600, currentColor);
+  line-height: 4.5rem;
+  margin-bottom: 24px;
+}
+
+.description {
+  @include font($poppins, 1rem, 400, currentColor);
+  line-height: 2rem;
+}
+
+.description + .description {
+  margin-top: 20px;
+}

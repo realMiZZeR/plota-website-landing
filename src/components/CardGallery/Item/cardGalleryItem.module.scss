@@ -1,0 +1,35 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.wrapper {
+  position: relative;
+  height: 344px;
+}
+
+.wrapper:nth-child(even) {
+  height: 295px;
+}
+
+.image {
+  position: relative;
+  width: 275px;
+  height: 100%;
+  background-color: #EEE;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.image img {
+  @extend %img-fit;
+}
+
+.title {
+  @include font($poppins, 1.5rem, 600, #333);
+  line-height: 2.5rem;
+}
+
+.description {
+  @include font($poppins, 1rem, 400, #949494);
+  line-height: 2rem;
+}

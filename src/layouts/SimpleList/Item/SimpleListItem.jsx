@@ -1,7 +1,7 @@
 import Image from 'node_modules/next/image'
-import styles from './advantagesItem.module.scss'
+import styles from './simpleListItem.module.scss'
 
-const AdvantagesItem = ({ title, description, imageSrc, imageAlt }) => {
+const SimpleListItem = ({ title, description, imageSrc, imageAlt }) => {
 
   return (
     <section className={styles.wrapper}>
@@ -14,4 +14,4 @@ const AdvantagesItem = ({ title, description, imageSrc, imageAlt }) => {
   )
 }
 
-export default AdvantagesItem
+export default SimpleListItem

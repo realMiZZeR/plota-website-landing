@@ -3,7 +3,7 @@
 
 .wrapper {
   @extend %screen-scroll;
-  background-color: #F3F3F3;
+  background-color: #333;
   padding: 84px 0;
 }
 
@@ -12,14 +12,15 @@
 }
 
 .title {
-  @include font($poppins, 3rem, 700, #000);
+  @include font($poppins, 3rem, 700, #FFF);
   line-height: 4.5rem;
-  text-transform: uppercase;
   margin-bottom: 104px;
+  text-align: end;
 }
 
-.list {
+.content {
   display: flex;
   justify-content: space-between;
-  gap: 24px;
+  align-items: center;
+  gap: 30px;
 }

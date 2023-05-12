@@ -1,0 +1,101 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.wrapper {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.wrapper.active {
+  pointer-events: all;
+}
+
+.wrapper.disabled .blackover {
+  opacity: 0;
+}
+
+.wrapper.disabled .content {
+  right: -100%;
+}
+
+.wrapper.active .blackover {
+  opacity: .15;
+  transition: .5s ease opacity;
+}
+
+.wrapper.active .content {
+  opacity: 1;
+  right: 0;
+  
+}
+
+.blackover {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+  opacity: 0;
+  z-index: 1;
+}
+
+.content {
+  position: absolute;
+  top: 0; right: -100%;
+  width: 528px;
+  height: 100%;
+  padding: 92px 48px;
+  background-image: url('../../../assets/images/hero-background.png');
+  background-repeat: no-repeat;
+  background-size: 100% 150%;
+  opacity: 0;
+  z-index: 2;
+  transition: .5s ease opacity, .5s ease right;
+}
+
+.button {
+  @extend %reset-button;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid #FFF;
+  border-radius: 100%;
+  overflow: hidden;
+  transition: .5s ease border;
+  margin-bottom: 42px;
+}
+
+.button path {
+  stroke: #FFF;
+  transition: .5s ease stroke;
+}
+
+.button:hover {
+  border: 1px solid #FFF;
+}
+
+.button:hover path {
+  stroke: #FFF;
+}
+
+.title {
+  @include font($poppins, 1.5rem, 600, #FFF);
+  line-height: 2.5rem;
+}
+
+.description {
+  @include font($poppins, 1rem, 400, #FFF);
+  line-height: 2rem;
+  margin-bottom: 24px;
+}
+
+.text {
+  @include font($poppins, 1rem, 400, #FFF);
+  line-height: 2rem;
+}
