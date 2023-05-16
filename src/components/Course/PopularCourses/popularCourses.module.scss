@@ -6,7 +6,14 @@
   position: relative;
   width: 100%;
   background-color: #333333;
-  padding-top: calc(56px + 40px);
+
+  @include setMedia('lg') {
+    padding: 60px 0;
+  }
+
+  @include setMedia('xl') {
+    padding: 96px 0;
+  }
 }
 
 .container {
@@ -19,28 +26,40 @@
   align-items: center;
   gap: 100px;
   width: 100%;
-  margin-bottom: 150px;
+  
+
+  @include setMedia('lg') {
+    margin-bottom: 50px;
+  }
+
+  @include setMedia('xl') {
+    margin-bottom: 150px;
+  }
 }
 
 .title {
-  @include font($poppins, 3rem, 600, #FFF);
+  @include setFont($poppins, 3rem, 600, #FFF);
   position: relative;
   top: 30px;
   line-height: 4.5rem;
   text-transform: uppercase;
   // flex-shrink: 2;
+  
+  @include setMedia('md') {
+    @include setFont($poppins, 2rem, 600, #FFF, 3.5rem);
+  }
 }
 
 .description {
-  @include font($poppins, 1rem, 400, #FFF);
+  @include setFont($poppins, 1rem, 400, #FFF);
   line-height: 2rem;
   width: 500px;
 }
 
 .courses {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
   gap: 35px;
   margin-top: auto;
 }

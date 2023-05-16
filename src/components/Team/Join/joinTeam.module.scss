@@ -2,9 +2,17 @@
 @import '@/styles/mixins';
 
 .wrapper {
-  @extend %screen-scroll;
-  padding: 89px 0;
+  min-height: 100vh;
+  scroll-snap-align: start;
   background-color: #F3F3F3;
+
+  @include setMedia('lg') {
+    padding: 70px 0;
+  }
+
+  @include setMedia('xl') {
+    padding: 89px 0;
+  }
 }
 
 .container {
@@ -15,20 +23,39 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 90px;
+
+  @include setMedia('lg') {
+    margin-bottom: 40px;
+  }
+
+  @include setMedia('xl') {
+    margin-bottom: 90px;
+  }
 }
 
 .title {
-  @include font($poppins, 3rem, 700, #000);
-  line-height: 4.5rem;
   width: 100%;
   text-transform: uppercase;
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 3rem, 700, #000);
+  }
+
+  @include setMedia('xl') {
+    @include setFont($poppins, 3rem, 700, #000);
+  }
 }
 
 .description {
-  @include font($poppins, 1rem, 400, #000);
-  line-height: 2rem;
   flex-shrink: 2;
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 1rem, 400, #000, 2rem);
+  }
+
+  @include setMedia('xl') {
+    @include setFont($poppins, 1rem, 400, #000, 2rem);
+  }
 }
 
 .vacancies {

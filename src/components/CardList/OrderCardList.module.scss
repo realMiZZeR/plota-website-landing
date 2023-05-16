@@ -12,7 +12,7 @@
 }
 
 .title {
-  @include font($poppins, 3rem, 700, #FFF);
+  @include setFont($poppins, 3rem, 700, #FFF);
   line-height: 4.5rem;
   margin-bottom: 104px;
   text-align: end;

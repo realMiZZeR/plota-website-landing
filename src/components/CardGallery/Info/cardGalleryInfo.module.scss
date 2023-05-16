@@ -85,17 +85,17 @@
 }
 
 .title {
-  @include font($poppins, 1.5rem, 600, #FFF);
+  @include setFont($poppins, 1.5rem, 600, #FFF);
   line-height: 2.5rem;
 }
 
 .description {
-  @include font($poppins, 1rem, 400, #FFF);
+  @include setFont($poppins, 1rem, 400, #FFF);
   line-height: 2rem;
   margin-bottom: 24px;
 }
 
 .text {
-  @include font($poppins, 1rem, 400, #FFF);
+  @include setFont($poppins, 1rem, 400, #FFF);
   line-height: 2rem;
 }

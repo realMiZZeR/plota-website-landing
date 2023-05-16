@@ -1,22 +1,22 @@
 import Head from 'next/head'
 import Header from '@/components/Header/Header'
-import Hero from '@/layouts/Hero/Hero';
-import ImageInfo from '@/layouts/ImageInfo/ImageInfo';
-import CardList from '@/layouts/CardList/CardList';
-import SimpleList from '@/layouts/SimpleList/SimpleList';
+import Hero from '@/components/Hero/Hero';
+import ImageInfo from '@/components/ImageInfo/ImageInfo';
+import OrderCardList from '@/components/CardList/OrderCardList';
+import SimpleList from '@/components/SimpleList/SimpleList';
 import JoinTeam from '@/components/Team/Join/JoinTeam';
 import AboutTeam from '@/components/Team/About/AboutTeam';
 
 const simpleListItems = [
-  {imageSrc: '', title: 'Flexible Time Off', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet werden.Erfolgreiche'},
-  {imageSrc: '', title: 'Professional Development', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet'},
-  {imageSrc: '', title: 'Flexible Work Culture', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet werden.Erfolgreiche Veränderung'},
+  { id: 1, imageSrc: '', title: 'Flexible Time Off', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet werden.Erfolgreiche'},
+  { id: 2, imageSrc: '', title: 'Professional Development', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet'},
+  { id: 3, imageSrc: '', title: 'Flexible Work Culture', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet werden.Erfolgreiche Veränderung'},
 ]
 
-const valuesCards = [
-  {order: '01', title: 'Together is better', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. '},
-  {order: '01', title: 'Together is better', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. '},
-  {order: '01', title: 'Together is better', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. '},
+const cards = [
+  { id: 1, order: '01', title: 'Together is better', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. '},
+  { id: 2, order: '01', title: 'Together is better', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. '},
+  { id: 3, order: '01', title: 'Together is better', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. '},
 ]
 
 const Career = () => {
@@ -43,9 +43,9 @@ const Career = () => {
           title={<>Only people who love their work can produce a quality product</>}
           sentences={['Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ssssssssssssssssssAenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.']}
         />
-        <CardList
+        <OrderCardList
           title={'Our values'}
-          items={valuesCards}
+          items={cards}
         />
         <SimpleList
           title={'Perks & benefits'}

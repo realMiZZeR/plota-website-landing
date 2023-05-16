@@ -15,7 +15,7 @@ const CardGalleryItem = ({ className, imageSrc, title, description, text }) => {
   return (
     <div onClick={handleCardClick} className={`${styles.wrapper} ${className}`}>
       <div className={styles.image}>
-        <Image src={imageSrc} alt='' />
+        {imageSrc && <Image src={imageSrc} alt='' />}
       </div>
       <strong className={styles.title}>{ title }</strong>
       <p className={styles.description}>{ description }</p>

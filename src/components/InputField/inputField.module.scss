@@ -7,13 +7,13 @@
 }
 
 .title {
-  @include font($poppins, 1rem, 400, #949494);
+  @include setFont($poppins, 1rem, 400, #949494);
   line-height: 2rem;
   margin-bottom: 12px;
 }
 
 .input, .textarea {
-  @include font($poppins, 1rem, 400, #000);
+  @include setFont($poppins, 1rem, 400, #000);
   color: #949494;
   width: 100%;
   height: 47px;

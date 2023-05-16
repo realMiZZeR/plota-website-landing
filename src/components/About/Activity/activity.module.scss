@@ -1,5 +1,5 @@
-@use '@/styles/variables' as v;
-@use '@/styles/mixins' as m;
+@import '@/styles/variables';
+@import '@/styles/mixins';
 
 .wrapper {
   width: 100%;
@@ -10,8 +10,7 @@
 }
 
 .title {
-  @include m.font(v.$poppins, 3rem, 600, #333333);
-  line-height: 4rem;
+  @include setFont($poppins, 3rem, 600, #333333, 4rem);
   text-transform: uppercase;
   text-align: end;
   margin-bottom: 80px;

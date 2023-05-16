@@ -18,11 +18,11 @@
 
 .image img {
   @extend %img-fit;
-  height: 0; // temporary
+  
 }
 
 .title {
-  @include font($poppins, 2rem, 700, $gray);
+  @include setFont($poppins, 2rem, 700, $gray);
   line-height: 3rem;
   text-transform: uppercase;
   width: 250px;
@@ -30,6 +30,6 @@
 }
 
 .description {
-  @include font($poppins, 1rem, 400, $gray);
+  @include setFont($poppins, 1rem, 400, $gray);
   line-height: 2rem;
 }

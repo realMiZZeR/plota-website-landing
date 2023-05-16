@@ -23,7 +23,7 @@
 }
 
 .hint {
-  @include font($poppins, 1rem, 400, #333);
+  @include setFont($poppins, 1rem, 400, #333);
   line-height: 2rem;
   width: 50%;
 }
@@ -36,6 +36,6 @@
 }
 
 .infoItem {
-  @include font($poppins, 1rem, 400, #333);
+  @include setFont($poppins, 1rem, 400, #333);
   line-height: 2rem;
 }

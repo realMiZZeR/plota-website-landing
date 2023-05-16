@@ -4,11 +4,13 @@ import styles from './aboutTeam.module.scss'
 
 const AboutTeam = () => {
 
+  const teamImageSrc = '';
+
   return (
     <article className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.image}>
-          <Image src={``} alt={``} />
+          {teamImageSrc && <Image src={teamImageSrc} alt={``} />}
         </div>
         <div className={styles.info}>
           <h2 className={styles.title}>Our Team</h2>

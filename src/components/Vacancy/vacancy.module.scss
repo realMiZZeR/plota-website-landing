@@ -25,12 +25,24 @@
   align-items: center;
   border-bottom: 1px solid #000;
   width: 100%;
-  padding: 16px 0;
+
+  @include setMedia('lg') {
+    padding: 4px 0;
+  }
+
+  @include setMedia('xl') {
+    padding: 16px 0;
+  }
 }
 
 .title {
-  @include font($poppins, 3rem, 700, #000);
-  line-height: 4rem;
+  @include setMedia('lg') {
+    @include setFont($poppins, 2rem, 700, #000, 3rem);
+  }
+
+  @include setMedia('xl') {
+    @include setFont($poppins, 3rem, 700, #000, 4rem);
+  }
 }
 
 .content {
@@ -45,7 +57,7 @@
 }
 
 .description {
-  @include font($poppins, 1rem, 400, #333);
+  @include setFont($poppins, 1rem, 400, #333);
   line-height: 2rem;
   width: 380px;
 }
@@ -58,12 +70,12 @@
 }
 
 .location {
-  @include font($poppins, 1rem, 600, $gray);
+  @include setFont($poppins, 1rem, 600, $gray);
   line-height: 2rem;
 }
 
 .link {
-  @include font($poppins, 1rem, 400, $gray);
+  @include setFont($poppins, 1rem, 400, $gray);
   border: 1px solid $gray;
   border-radius: 50px;
   line-height: 2rem;

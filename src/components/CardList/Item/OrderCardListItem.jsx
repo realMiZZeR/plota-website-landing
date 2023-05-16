@@ -1,6 +1,6 @@
-import styles from './cardListItem.module.scss'
+import styles from './OrderCardListItem.module.scss'
 
-const ValueCard = ({ order, title, description }) => {
+const OrderCardListItem = ({ order, title, description }) => {
 
   return (
     <div className={styles.wrapper}>
@@ -11,4 +11,4 @@ const ValueCard = ({ order, title, description }) => {
   )
 }
 
-export default ValueCard;
+export default OrderCardListItem;

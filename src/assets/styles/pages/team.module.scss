@@ -1,5 +1,17 @@
-.pride .image {
-  height: 300px;
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.prideImage {
+  margin-top: auto;
+  
+
+  @include setMedia('lg') {
+    padding-top: 60px;
+  }
+
+  @include setMedia('xl') {
+    height: 300px;
+  }
 }
 
 .quality {
@@ -9,5 +21,12 @@
 
 .quality > * {
   flex-direction: row-reverse;
-  padding-top: 110px;
+
+  @include setMedia('lg') {
+    padding-top: 60px;
+  }
+
+  @include setMedia('xl') {
+    padding-top: 110px;
+  }
 }

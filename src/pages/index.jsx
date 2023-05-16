@@ -2,19 +2,19 @@ import { useInView } from 'react-intersection-observer';
 import { useState } from 'react'
 import Head from 'next/head'
 import Header from '@/components/Header/Header'
-import Hero from '@/layouts/Hero/Hero';
+import Hero from '@/components/Hero/Hero';
 import About from '@/components/About/About';
 import PopularCourses from '@/components/Course/PopularCourses/PopularCourses';
-import SimpleList from '@/layouts/SimpleList/SimpleList';
+import SimpleList from '@/components/SimpleList/SimpleList';
 import AboutTeam from '@/components/Team/About/AboutTeam';
 import JoinTeam from '@/components/Team/Join/JoinTeam';
 import Footer from '@/components/Footer/Footer';
 import { InView } from 'react-intersection-observer';
 
 const simpleListItems = [
-  {imageSrc: '', title: 'Easy learning format', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet werden.Erfolgreiche'},
-  {imageSrc: '', title: 'Individual approach', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet'},
-  {imageSrc: '', title: 'Qualified tutors', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet werden.Erfolgreiche Veränderung'},
+  {id: 1, imageSrc: '', title: 'Easy learning format', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet werden.Erfolgreiche'},
+  {id: 2, imageSrc: '', title: 'Individual approach', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet'},
+  {id: 3, imageSrc: '', title: 'Qualified tutors', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet werden.Erfolgreiche Veränderung'},
 ]
 
 const Home = () => {

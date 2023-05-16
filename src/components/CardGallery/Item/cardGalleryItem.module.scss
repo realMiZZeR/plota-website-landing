@@ -3,6 +3,7 @@
 
 .wrapper {
   position: relative;
+  width: 100%;
   height: 344px;
 }
 
@@ -12,7 +13,6 @@
 
 .image {
   position: relative;
-  width: 275px;
   height: 100%;
   background-color: #EEE;
   border-radius: 12px;
@@ -25,11 +25,11 @@
 }
 
 .title {
-  @include font($poppins, 1.5rem, 600, #333);
+  @include setFont($poppins, 1.5rem, 600, #333);
   line-height: 2.5rem;
 }
 
 .description {
-  @include font($poppins, 1rem, 400, #949494);
+  @include setFont($poppins, 1rem, 400, #949494);
   line-height: 2rem;
 }

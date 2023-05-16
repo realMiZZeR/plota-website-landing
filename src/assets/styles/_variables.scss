@@ -1,9 +1,19 @@
+@import './mixins';
+
 // Fonts.
 $poppins: 'Poppins';
 $montserrat: 'Montserrat';
 
 // Colors.
 $gray: #333;
+
+// Breakpoints.
+$breakpoints: (
+  'sm': 425px,
+  'md': 768px,
+  'lg': 1024px,
+  'xl': 1440px,
+);
 
 %reset-button {
   border: none;
@@ -12,9 +22,17 @@ $gray: #333;
 }
 
 %container {
-  max-width: 1300px;
   margin: 0 auto;
-  padding: 0 41px;
+
+  @include setMedia('lg') {
+    max-width: 1200px;
+    padding: 0 41px;
+  }
+  
+  @include setMedia('xl') {
+    max-width: 1440px;
+    padding: 0 41px;
+  }
 }
 
 %screen-scroll {
@@ -27,7 +45,6 @@ $gray: #333;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
 }
 
 %link-button {

@@ -31,47 +31,41 @@
 }
 
 .title {
-  @include font($poppins, 6rem, 700, #FFF);
-  line-height: 7.5rem;
-  margin-bottom: 115px;
   transform: translateY(-50px);
-  opacity: 0;
   animation: animateTitle 1s ease forwards;
   animation-delay: 1s;
+  opacity: 0;
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 4rem, 700, #FFF, 5.5rem);
+    margin-bottom: 50px;
+  }
+
+  @include setMedia('xl') {
+    @include setFont($poppins, 6rem, 700, #FFF, 7.5rem);
+    margin-bottom: 115px;
+  }
 }
 
 .decorations {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
+  user-select: none;
+  pointer-events: none;
 }
 
-.decorations img {
+.triangles {
   position: absolute;
-  bottom: 50px; right: 0;
-  opacity: 0;
-  transform: translateY(-30px);
-  animation: decorationsAppear .8s ease forwards;
+  top: 30%; right: -40%;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.5);
 }
 
-.decorations img:nth-child(1) {
-  bottom: 200px;
-  right: 400px;
-  animation-delay: 1s;
-}
-
-.decorations img:nth-child(2) {
-  right: 0;
-  animation-delay: 1.4s;
-}
-
-.decorations img:nth-child(3) {
-  right: 120px;
-  bottom: -160px;
-  transform: rotate(60deg)!important;
-  animation-delay: 1.6s;
+.triangles img {
+  @extend %img-fit;
 }
 
 @keyframes animateTitle {

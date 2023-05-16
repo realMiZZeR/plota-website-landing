@@ -1,5 +1,5 @@
-@use '@/styles/variables' as v;
-@use '@/styles/mixins' as m;
+@import '@/styles/variables';
+@import '@/styles/mixins';
 
 .section {
   display: flex;
@@ -21,15 +21,14 @@
 }
 
 .title {
-  @include m.font(v.$poppins, 2rem, 600, #333333);
+  @include setFont($poppins, 2rem, 600, #333333);
   margin-top: 24px;
   margin-bottom: 22px;
   text-transform: uppercase
 }
 
 .description {
-  @include m.font(v.$poppins, 1rem, 400, #333333);
-  line-height: 32px;
+  @include setFont($poppins, 1rem, 400, #333333, 2rem);
 }
 
 .image {

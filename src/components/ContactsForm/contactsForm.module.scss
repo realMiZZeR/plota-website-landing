@@ -22,7 +22,7 @@
 
 .button {
   @extend %reset-button;
-  @include font($poppins, 1rem, 400, #949494);
+  @include setFont($poppins, 1rem, 400, #949494);
   line-height: 2.5rem;
   width: 100%;
   height: 44px;

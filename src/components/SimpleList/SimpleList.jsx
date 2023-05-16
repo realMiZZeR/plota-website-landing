@@ -10,6 +10,7 @@ const SimpleList = ({ title, items = [] }) => {
         <div className={styles.list}>
           {items.map(item => (
             <SimpleListItem
+              key={item.id}
               title={item.title}
               description={item.description}
               imageSrc={item.imageSrc}

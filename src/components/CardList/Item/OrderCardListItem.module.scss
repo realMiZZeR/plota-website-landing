@@ -11,16 +11,16 @@
 }
 
 .order {
-  @include font($poppins, 1rem, 400, #FFF);
+  @include setFont($poppins, 1rem, 400, #FFF);
   line-height: 2rem;
 }
 
 .title {
-  @include font($poppins, 3rem, 700, #FFF);
+  @include setFont($poppins, 3rem, 700, #FFF);
   line-height: 4rem;
 }
 
 .description {
-  @include font($poppins, 1rem, 400, #FFF);
+  @include setFont($poppins, 1rem, 400, #FFF);
   line-height: 2rem;
 }

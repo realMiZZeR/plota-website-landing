@@ -1,7 +1,7 @@
-import ValueCard from './Item/CardListItem';
-import styles from './cardList.module.scss'
+import OrderCardListItem from './Item/OrderCardListItem';
+import styles from './OrderCardList.module.scss'
 
-const CardList = ({ className, title, items = [] }) => {
+const OrderCardList = ({ className, title, items = [] }) => {
 
   return (
     <article className={`${styles.wrapper} ${className}`}>
@@ -9,8 +9,8 @@ const CardList = ({ className, title, items = [] }) => {
         <h2 className={styles.title}>{ title }</h2>
         <div className={styles.content}>
           {items.map(item => (
-            <ValueCard
-              key={Date.now()}
+            <OrderCardListItem
+              key={item.id}
               order={item.order}
               title={item.title}
               description={item.description}
@@ -22,4 +22,4 @@ const CardList = ({ className, title, items = [] }) => {
   )
 }
 
-export default CardList;
+export default OrderCardList;

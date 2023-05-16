@@ -1,0 +1,42 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.wrapper {
+  @extend %screen-scroll;
+  background-color: #F3F3F3;
+  
+
+  @include setMedia('lg'){
+    padding-top: 70px;
+    padding-bottom: 21px;
+  }
+
+  @include setMedia('xl'){
+    padding-top: 131px;
+    padding-bottom: 41px;
+  }
+}
+
+.container {
+  @extend %container;
+}
+
+.title {
+  @include setFont($poppins, 3rem, 700, #000);
+  line-height: 4.5rem;
+  
+
+  @include setMedia('lg') {
+    margin-bottom: 60px;
+  }
+
+  @include setMedia('xl') {
+    margin-bottom: 104px;
+  }
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}

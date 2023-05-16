@@ -9,48 +9,79 @@
 
 .container {
   @extend %container;
+  display: flex;
+  gap: 41px;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  gap: 41px;
 }
 
 .image {
+  position: relative;
   width: 100%;
   height: 100%;
   background-color: #E0E0E0;
   border-radius: 12px;
+  overflow: hidden;
+
+  @include setMedia('lg') {
+    flex-shrink: .6;
+  }
+
+  @include setMedia('xl') {
+    flex-shrink: .5;
+  }
+}
+
+.image img {
+  @extend %img-fit;
 }
 
 .info {
-  align-self: flex-start;
-  flex-shrink: 2;
+  position: relative;
 }
 
 .title {
-  @include font($poppins, 3rem, 700, #000);
-  line-height: 4.5rem;
   text-transform: uppercase;
   margin-bottom: 24px;
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 3rem, 700, #000);
+  }
+
+  @include setMedia('xl') {
+    @include setFont($poppins, 3.5rem, 700, #000);
+  }
 }
 
 .description {
-  @include font($poppins, 1rem, 400, #000);
-  line-height: 2rem;
   margin-bottom: 76px;
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 1rem, 400, #000, 2rem);
+  }
+
+  @include setMedia('xl') {
+    @include setFont($poppins, 1.3rem, 400, #000, 2.8rem);
+  }
 }
 
 .link {
   display: block;
-  @include font($poppins, 1rem, 400, $gray);
-  line-height: 2.2rem;
   width: fit-content;
   border: 1px solid $gray;
   border-radius: 50px;
-  padding: 4px 24px;
   text-decoration: none;
   transition: background .3s ease, color .3s ease;
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 1rem, 400, #000, 2rem);
+    padding: 4px 24px;
+  }
+
+  @include setMedia('xl') {
+    @include setFont($poppins, 1.3rem, 400, #000, 2.2rem);
+    padding: 12px 24px;
+  }
 }
 
 .link:hover {

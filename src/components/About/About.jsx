@@ -2,8 +2,8 @@ import Image from 'next/image';
 import Stats from '@/components/About/Stats/Stats';
 import Activity from '@/components/About/Activity/Activity';
 
-import customerLogo from '@/assets/images/customer-logo.png';
 import styles from './about.module.scss';
+import customerLogo from '@/assets/images/customer-logo.png';
 
 const About = () => {
   return (

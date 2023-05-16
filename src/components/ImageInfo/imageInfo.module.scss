@@ -4,8 +4,16 @@
 .wrapper {
   @extend %screen-scroll;
   width: 100%;
-  padding-top: 70px;
-  padding-bottom: 50px;
+
+  @include setMedia('lg') {
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+
+  @include setMedia('xl') {
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
 }
 
 .container {
@@ -37,13 +45,13 @@
 }
 
 .title {
-  @include font($poppins, 3rem, 600, currentColor);
+  @include setFont($poppins, 3rem, 600, currentColor);
   line-height: 4.5rem;
   margin-bottom: 24px;
 }
 
 .description {
-  @include font($poppins, 1rem, 400, currentColor);
+  @include setFont($poppins, 1rem, 400, currentColor);
   line-height: 2rem;
 }
 
