@@ -5,7 +5,6 @@
   @extend %screen-scroll;
   position: relative;
   width: 100%;
-  background-color: #333333;
 
   @include setMedia('lg') {
     padding: 60px 0;
@@ -20,13 +19,11 @@
   @extend %container;
 }
 
-.header {
+.head {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
-  gap: 100px;
   width: 100%;
-  
 
   @include setMedia('lg') {
     margin-bottom: 50px;
@@ -38,22 +35,15 @@
 }
 
 .title {
-  @include setFont($poppins, 3rem, 600, #FFF);
+  @include setFont($poppins, 3rem, 600, #333);
   position: relative;
   top: 30px;
   line-height: 4.5rem;
   text-transform: uppercase;
-  // flex-shrink: 2;
   
   @include setMedia('md') {
-    @include setFont($poppins, 2rem, 600, #FFF, 3.5rem);
+    @include setFont($poppins, 2rem, 600, #333, 3.5rem);
   }
-}
-
-.description {
-  @include setFont($poppins, 1rem, 400, #FFF);
-  line-height: 2rem;
-  width: 500px;
 }
 
 .courses {

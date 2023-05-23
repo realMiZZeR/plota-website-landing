@@ -1,36 +1,28 @@
-import Image from 'next/image';
-import Stats from '@/components/About/Stats/Stats';
-import Activity from '@/components/About/Activity/Activity';
+import TextDescription from '@/components/TextDescription/TextDescription'
+import Counter from '@/components/Counter/Counter'
 
-import styles from './about.module.scss';
-import customerLogo from '@/assets/images/customer-logo.png';
+import styles from './about.module.scss'
 
 const About = () => {
+
   return (
     <article className={styles.wrapper}>
       <div className={styles.container}>
-        <div className={styles.about}>
-          <div className={styles.info}>
-            <h3 className={styles.title}>About Us</h3>
-            <p className={styles.description}>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
-          </div>
-
-          <div className={styles.gallery}>
-            <Image src={customerLogo} alt="Customer Logo" />
-            <Image src={customerLogo} alt="Customer Logo" />
-            <Image src={customerLogo} alt="Customer Logo" />
-            <Image src={customerLogo} alt="Customer Logo" />
-            <Image src={customerLogo} alt="Customer Logo" />
-            <Image src={customerLogo} alt="Customer Logo" />
-          </div>
+        <TextDescription
+          title={''} 
+          description={'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.'} 
+          order={1} 
+          pretitle={'Who we are'}
+          className={styles.text}
+        />
+        <div className={styles.counters}>
+          <Counter reachNumber={20} countDelay={150} description='Training programmes' />
+          <Counter reachNumber={416} countDelay={5} description='Current students' />
+          <Counter reachNumber={48} countDelay={150} description='Clients' />
         </div>
-
-        <Stats />
-        <Activity />
       </div>
-
     </article>
   )
 }
 
-export default About;
+export default About

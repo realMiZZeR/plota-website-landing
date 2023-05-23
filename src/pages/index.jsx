@@ -1,8 +1,9 @@
 import Header from '@/components/Header/Header'
 import Hero from '@/components/Hero/Hero'
-import ReactFullpage from '@fullpage/react-fullpage'
 import Head from 'node_modules/next/head'
-
+import About from '@/components/About/About'
+import Customers from '@/components/Customers/Customers'
+import PopularCourses from '@/components/Course/PopularCourses/PopularCourses'
 
 const Home = () => {
 
@@ -15,18 +16,12 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header color={'black'} />
-      <ReactFullpage
-        licenseKey={''}
-        credits={{enabled: false, label: ''}}
-        scrollingSpeed={1000}
-        render={({state, fullpageApi}) => {
-          return (
-            <div className='section'>
-              <Hero title={'Title describing the company’s business'} />
-            </div>
-          )
-        }}
-      />
+      <main className='main'>
+        <Hero title={'Title describing the company’s business'} />
+        <About />
+        <Customers />
+        <PopularCourses />
+      </main>
     </>
   )
 }

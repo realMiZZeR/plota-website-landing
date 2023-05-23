@@ -4,8 +4,9 @@
 .wrapper {
   position: relative;
   width: 100%;
+  height: 300px;
   padding: 15px 20px;
-  border: 1px solid #FFF;
+  border: 1px solid #333;
   border-radius: 12px;
   overflow: hidden;
   z-index: 1;
@@ -15,7 +16,7 @@
   }
 
   @include setMedia('xl') {
-    height: 430px;
+    height: 410px;
   }
 }
 
@@ -29,11 +30,11 @@
   transition: max-height .5s ease;
 
   @include setMedia('lg') {
-    max-height: 120px;
+    max-height: 160px;
   }
 
   @include setMedia('xl') {
-    max-height: 220px;
+    max-height: 240px;
   }
 }
 
@@ -62,21 +63,33 @@
   max-height: 0;
 }
 
+.wrapper:hover .title,
+.wrapper:hover .description {
+  color: #FFF;
+  transition: 1s color ease;
+}
+
+.wrapper:hover .tag {
+  color: #FFF;
+  border: 1px solid #FFF;
+  transition: 1s color ease, 1s border ease;
+}
+
 .tag, .description {
-  @include setFont($poppins, 1rem, 400, #FFF, 2rem);
+  @include setFont($poppins, 1rem, 400, #333, 2rem);
 }
 
 .tag {
   display: block;
   width: min-content;
-  border: 1px solid #FFF;
+  border: 1px solid #333;
   border-radius: 50px;
   padding: .4rem 1.2rem;
   margin-bottom: 24px;
 }
 
 .title {
-  @include setFont($poppins, 1.5rem, 600, #FFF);
+  @include setFont($poppins, 1.5rem, 600, #333);
   word-break: break-all;
   line-height: 2rem;
   text-transform: uppercase;

@@ -4,6 +4,13 @@ import CoursePreview from '../Preview/CoursePreview'
 
 import styles from './popularCourses.module.scss'
 import ImageTest from '@/assets/images/course-preview-test.png'
+import TextDescription from '@/components/TextDescription/TextDescription'
+
+const courses = [
+  {id: 1, title: 'Agile methodology', description: '', tag: 'Management', imageSrc: ImageTest, imageAlt: ''},
+  {id: 2, title: 'Test management', description: '', tag: 'Management', imageSrc: ImageTest, imageAlt: ''},
+  {id: 3, title: 'SAC SAP Analytics', description: 'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben', tag: 'Management', imageSrc: ImageTest, imageAlt: ''},
+]
 
 const PopularCourses = () => {
 
@@ -14,39 +21,29 @@ const PopularCourses = () => {
   }
 
   return (
-    <article 
-      onMouseEnter={mouseEnterHandler}
-      className={styles.wrapper}
-    >
+    <article className={styles.wrapper}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h3 className={styles.title}>Popular <br /> Courses</h3>
-          <p className={styles.description}>We do not have a fixed course program, all our <br /> training is fully adapted to the client. We also develop tailor-made courses for our clients.</p>
+        <div className={styles.head}>
+          <h3 className={styles.title}>Popular courses</h3>
+          <TextDescription
+            pretitle={'Our Customers'}
+            description={'We do not have a fixed course program, all our training is fully adapted to the client. We also develop tailor-made courses for our clients.'}
+            order={4}
+           />
         </div>
         <div className={styles.courses}>
-          <CoursePreview
-            title={<span>Agile <br /> Methodology</span>}
-            description={''}
-            tag={"Management"}
-            imageSrc={ImageTest}
-            imageAlt={"Image"}
-          />
-          <CoursePreview
-            title={<span>Test <br /> Management</span>}
-            description={''}
-            tag={"Management"}
-            imageSrc={ImageTest}
-            imageAlt={"Image"}
-          />
-          <CoursePreview
-            title={<span>SAC <br /> SAP Analytics</span>}
-            description={'Organisationsentwicklung und Personalentwicklung sollten als zwei Seiten derselben'}
-            tag={"Management"}
-            imageSrc={ImageTest}
-            imageAlt={"Image"}
-          />
+          {courses.length > 0 && courses.map(course => (
+            <CoursePreview
+              key={course.id}
+              title={course.title}
+              description={course.description}
+              tag={course.tag}
+              imageSrc={course.imageSrc}
+              imageAlt={course.imageAlt}
+             />
+          ))}
         </div>
-      </div>
+      </div> 
     </article>
   );
 }
