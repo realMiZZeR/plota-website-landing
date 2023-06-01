@@ -1,0 +1,47 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.slide {
+  opacity: 0;
+  transition: 0.5s ease;
+  pointer-events: none;
+  position: absolute;
+  transform: translateY(0);
+  &.current {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &.animating-next {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  &.animating-prev {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  &.animating-next-top {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  &.animating-prev-bottom {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  &.animating-next-bottom {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  &.animating-prev-top {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+}
+
+.title {
+  @include setFont($poppins, 3rem, 600, #ffffff);
+  margin-bottom: 10px;
+}
+
+.text {
+  @include setFont($poppins, 2rem, 400, #ffffff);
+}

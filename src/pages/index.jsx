@@ -4,9 +4,9 @@ import Head from 'node_modules/next/head'
 import About from '@/components/About/About'
 import Customers from '@/components/Customers/Customers'
 import PopularCourses from '@/components/Course/PopularCourses/PopularCourses'
+import WorkSlider from '@/components/WorkSlider/WorkSlider'
 
 const Home = () => {
-
   return (
     <>
       <Head>
@@ -16,9 +16,10 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header color={'black'} />
-      <main className='main'>
+      <main className="main">
         <Hero title={'Title describing the company’s business'} />
         <About />
+        <WorkSlider />
         <Customers />
         <PopularCourses />
       </main>
