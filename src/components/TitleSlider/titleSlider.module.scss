@@ -1,0 +1,33 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.wrapper {
+  height: 100vh;
+  scroll-snap-align: start;
+  background-color: #333333;
+  padding: 150px 0;
+}
+
+.container {
+  @extend %container;
+  display: flex;
+  justify-content: space-between;
+
+  & > div {
+    width: 100%;
+  }
+}
+
+.counter {
+  margin-left: auto;
+  @include setFont($poppins, 1rem, 400, #949494);
+}
+
+.slides {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 80px;
+  max-width: 400px;
+  width: 100%;
+}

@@ -1,0 +1,111 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}
+
+.nav {
+  display: flex;
+}
+
+.title {
+  @include setFont($poppins, 2rem, 500, #949494);
+  transition: .4s ease;
+  line-height: normal;
+
+  &.active {
+    font-size: 6rem;
+    font-weight: 600;
+    background-image: url(../../../assets/images/hero-background.png);
+    background-repeat: repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 130%;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  & + & {
+    margin-top: 50px;
+  }
+
+  &:hover .title {
+    color: #fff;
+  }
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #949494;
+  background: #333333;
+  margin-right: 90px;
+  position: relative;
+  transition: .4s ease;
+
+  &.active {
+    background-image: url('../../../assets/images/hero-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &.line::before {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    height: 40px;
+    right: 40%;
+    width: 2px;
+    background: #949494;
+  }
+
+  &.line::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    height: 98px;
+    right: 40%;
+    width: 2px;
+    background: #949494;
+  }
+
+  &.first.line::before, &.last.line::after {
+    content: '';
+    bottom: 0;
+    height: 0;
+    right: 0;
+    width: 0;
+  }
+
+  &.last.line.active::before {
+    height: 115px;
+    right: 40%;
+  }
+
+
+  .first {
+    display: block;
+  }
+
+  //.line {
+  //  position: absolute;
+  //  top: 8px;
+  //  right: 40%;
+  //  width: 2px;
+  //  height: 0;
+  //  background: black;
+  //
+  //  &.active {
+  //    height: 100%;
+  //  }
+  //}
+}
