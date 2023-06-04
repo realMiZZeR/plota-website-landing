@@ -43,5 +43,5 @@
 }
 
 .text {
-  @include setFont($poppins, 2rem, 400, #ffffff);
+  @include setFont($poppins, 1.5rem, 400, #ffffff, 3rem);
 }

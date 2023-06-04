@@ -46,6 +46,10 @@ const CardGallery = ({ title, cards = [] }) => {
             text={currentCard.text}
           />
         </CardContext.Provider>
+
+
+
+
       </div>
 
     </article>

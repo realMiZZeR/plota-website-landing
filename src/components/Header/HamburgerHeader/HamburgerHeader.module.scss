@@ -1,0 +1,30 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+@mixin animatePart($sign: 1) {
+  animation: animate .5s ease-in forwards;
+
+  @keyframes animate {
+    50% {
+      top: 0;
+    }
+    100% {
+      transform: rotate($sign * 45deg);
+    }
+  }
+}
+
+.logo {
+  width: 73px;
+  height: 23px;
+}
+
+.menu {
+  @include setFont($poppins, 1rem, 400, #FFF, 1.5rem);
+  text-transform: uppercase;
+}
+
+.menuText {
+  margin-right: 12px;
+}
+

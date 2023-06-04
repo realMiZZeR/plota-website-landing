@@ -1,0 +1,93 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+$appearDelay: 1s;
+$circleSize: 500px;
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -300px;
+  right: 0;
+  width: $circleSize;
+  height: $circleSize;
+  padding: 72px;
+  background-image: url('../../assets/images/hero-background.png');
+  background-size: 100% 130%;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  overflow: hidden;
+  user-select: none;
+  opacity: 0;
+  transition: .5s top ease, .5s right ease, 1s width ease, 1s height ease, .5s border-radius ease, 1s opacity ease;
+}
+
+.wrapper.active {
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  opacity:  1;
+}
+
+.info {
+  @include setFont($poppins, 1rem, 400, #FFF, 2rem);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 5s opacity ease;
+  transform: translateY(-10px);
+}
+
+.address {
+  margin-top: auto;
+}
+
+.nav {
+  align-self: flex-end;
+  width: 100%;
+  opacity: 0;
+  transition: 5s opacity ease;
+  transform: translateY(-10px);
+}
+
+.wrapper.active .info,
+.wrapper.active .nav {
+  animation: appear 1s ease forwards $appearDelay;
+}
+
+@keyframes appear {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.link {
+  display: flex;
+  justify-content: space-between;
+  @extend %reset-link;
+  text-decoration: none;
+}
+
+.link + .link {
+  margin-top: 48px;
+}
+
+.title {
+  @include setFont($poppins, 2rem, 700, #FFF, 5rem);
+  transition: .5s font-size ease-in-out;
+}
+
+.link.active .title, .title:hover {
+  @include setFont($poppins, 4.5rem, 700, #FFF, 5rem);
+}
+
+.order {
+  @include setFont($poppins, 1rem, 400, #FFF, 2rem);
+}

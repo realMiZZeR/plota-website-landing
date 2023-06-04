@@ -1,0 +1,16 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.item {
+  display: block;
+  position: relative;
+  width: 33px;
+  height: 33px;
+  border: 1px solid #FFF;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.item img {
+  @extend %img-fit;
+}

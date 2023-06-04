@@ -23,5 +23,5 @@
 }
 
 .description {
-  @include setFont($poppins, 2rem, 400, #333, 3rem);
+  @include setFont($poppins, 1.5rem, 400, #333, 2.5rem);
 }

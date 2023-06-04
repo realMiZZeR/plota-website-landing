@@ -1,0 +1,51 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.icon {
+  display: flex;
+  align-items: center;
+  width: 42px;
+  height: 35px;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.rect,
+.rect::before,
+.rect::after {
+  position: relative;
+  top: 0; left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #FFF;
+  transition: background-color .2s ease-in, transform .3s ease-in, top .2s ease-in;
+}
+
+.rect::before {
+  position: absolute;
+  content: '';
+  top: -10px;
+}
+
+.rect::after {
+  position: absolute;
+  content: '';
+  top: 10px;
+}
+
+.icon.active .rect::before,
+.icon.active .rect::after {
+  top: 0;
+}
+
+.icon.active .rect {
+  background-color: transparent;
+}
+
+.icon.active .rect::before {
+  transform: rotate(-45deg);
+}
+
+.icon.active .rect::after {
+  transform: rotate(45deg);
+}

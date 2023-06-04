@@ -19,6 +19,12 @@ $breakpoints: (
   border: none;
   outline: none;
   background-color: transparent;
+  padding: 0;
+}
+
+%reset-link {
+  text-decoration: none;
+  color: #000;
 }
 
 %container {
@@ -45,8 +51,4 @@ $breakpoints: (
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-}
-
-%link-button {
-
 }
