@@ -17,4 +17,4 @@ const Hamburger = ({ onClick }) => {
   )
 }
 
-export default  Hamburger;
+export default Hamburger;

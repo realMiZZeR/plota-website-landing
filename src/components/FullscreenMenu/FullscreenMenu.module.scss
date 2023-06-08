@@ -19,9 +19,9 @@ $circleSize: 500px;
   background-repeat: no-repeat;
   border-radius: 50%;
   overflow: hidden;
-  user-select: none;
   opacity: 0;
   transition: .5s top ease, .5s right ease, 1s width ease, 1s height ease, .5s border-radius ease, 1s opacity ease;
+  pointer-events: none;
 }
 
 .wrapper.active {
@@ -31,6 +31,12 @@ $circleSize: 500px;
   height: 100vh;
   border-radius: 0;
   opacity:  1;
+  pointer-events: all;
+}
+
+.lang {
+  @include setFont($poppins, 1rem, 400, #FFF, 2rem);
+  text-transform: uppercase;
 }
 
 .info {
@@ -40,31 +46,32 @@ $circleSize: 500px;
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: 5s opacity ease;
   transform: translateY(-10px);
+  transition: .5s transform ease, .5s opacity ease;
 }
 
 .address {
   margin-top: auto;
+  margin-bottom: 58px;
 }
 
 .nav {
   align-self: flex-end;
   width: 100%;
   opacity: 0;
-  transition: 5s opacity ease;
   transform: translateY(-10px);
+  transition: .5s transform ease, .5s opacity ease;
 }
 
 .wrapper.active .info,
 .wrapper.active .nav {
-  animation: appear 1s ease forwards $appearDelay;
+  animation: appear 1s ease forwards 1s;
 }
 
 @keyframes appear {
   100% {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
 }
 

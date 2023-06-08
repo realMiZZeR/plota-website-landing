@@ -1,10 +1,10 @@
-import { useContext } from 'react';
+import {useContext, useEffect, useState} from "react";
+import {CardContext} from "@/components/CardGallery/CardGallery";
 import styles from './cardGalleryInfo.module.scss'
-import { CardContext } from '../CardGallery';
 
 const CardGalleryInfo = ({ title, description, text }) => {
 
-  const { showInfo, setShowInfo } = useContext(CardContext)
+  const {showInfo, setShowInfo} = useContext(CardContext)
 
   return (
     <div className={`${styles.wrapper} ${showInfo ? styles.active : styles.disabled}`}>

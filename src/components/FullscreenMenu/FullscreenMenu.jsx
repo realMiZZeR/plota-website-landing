@@ -24,12 +24,10 @@ const FullscreenMenu = ({ isActive = false }) => {
     return styles.link
   }
 
-  console.log(router)
-
   return (
     <div className={`${styles.wrapper} ${isActive ? styles.active : ''}`}>
       <div className={styles.info}>
-        <span>eng</span> {/* todo: language component */}
+        <span className={styles.lang}>eng</span> {/* todo: language component */}
         <address className={styles.address}>
           <p>Mustakivi Tee 25-623,</p>
           <p>13912 Tallinn</p>

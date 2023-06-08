@@ -4,16 +4,12 @@
 .wrapper {
   position: relative;
   width: 100%;
-  height: 344px;
-}
-
-.wrapper:nth-child(even) {
-  height: 295px;
+  height: 436px;
 }
 
 .image {
   position: relative;
-  height: 100%;
+  height: 344px;
   background-color: #EEE;
   border-radius: 12px;
   overflow: hidden;
