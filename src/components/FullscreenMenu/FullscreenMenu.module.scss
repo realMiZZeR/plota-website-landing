@@ -22,6 +22,24 @@ $circleSize: 500px;
   opacity: 0;
   transition: .5s top ease, .5s right ease, 1s width ease, 1s height ease, .5s border-radius ease, 1s opacity ease;
   pointer-events: none;
+
+  @include setMedia('sm') {
+    top: -100px;
+    right: -50px;
+    width: calc($circleSize - 300px);
+    height: calc($circleSize - 300px);
+    flex-direction: column-reverse;
+    padding: 20px;
+  }
+
+  @include setMedia('md') {
+    flex-direction: initial;
+    padding: 35px;
+  }
+
+  @include setMedia('lg') {
+    padding: 40px;
+  }
 }
 
 .wrapper.active {
@@ -48,11 +66,38 @@ $circleSize: 500px;
   opacity: 0;
   transform: translateY(-10px);
   transition: .5s transform ease, .5s opacity ease;
+
+  @include setMedia('sm') {
+    height: auto;
+    margin-top: auto;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  @include setMedia('md') {
+    height: 100%;
+    margin-top: initial;
+    flex-direction: column;
+  }
 }
 
 .address {
   margin-top: auto;
   margin-bottom: 58px;
+
+  @include setMedia('sm') {
+    margin-top: initial;
+    @include setFont($poppins, .6rem, 400, #FFF, 1.2rem);
+  }
+
+  @include setMedia('md') {
+    margin-top: auto;
+    @include setFont($poppins, .8rem, 400, #FFF, 1.6rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 1rem, 400, #FFF, 2rem);
+  }
 }
 
 .nav {
@@ -61,6 +106,10 @@ $circleSize: 500px;
   opacity: 0;
   transform: translateY(-10px);
   transition: .5s transform ease, .5s opacity ease;
+
+  @include setMedia('sm') {
+    margin-top: auto;
+  }
 }
 
 .wrapper.active .info,
@@ -83,18 +132,60 @@ $circleSize: 500px;
 }
 
 .link + .link {
-  margin-top: 48px;
+  @include setMedia('sm') {
+    margin-top: 20px;
+  }
+
+  @include setMedia('md') {
+    margin-top: 48px;
+  }
+
+  @include setMedia('lg') {
+    margin-top: 48px;
+  }
 }
 
 .title {
   @include setFont($poppins, 2rem, 700, #FFF, 5rem);
   transition: .5s font-size ease-in-out;
+
+  @include setMedia('sm') {
+    @include setFont($poppins, 1.3rem, 700, #FFF, 3.5rem);
+  }
+
+  @include setMedia('md') {
+    @include setFont($poppins, 1.5rem, 700, #FFF, 3.5rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 2rem, 700, #FFF, 4rem);
+  }
 }
 
 .link.active .title, .title:hover {
   @include setFont($poppins, 4.5rem, 700, #FFF, 5rem);
+
+  @include setMedia('sm') {
+    @include setFont($poppins, 2rem, 700, #FFF, 4rem);
+  }
+
+  @include setMedia('md') {
+    @include setFont($poppins, 3rem, 700, #FFF, 4rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 4rem, 700, #FFF, 5rem);
+  }
 }
 
 .order {
   @include setFont($poppins, 1rem, 400, #FFF, 2rem);
+
+  @include setMedia('md') {
+    @include setFont($poppins, .8rem, 400, #FFF, 1.6rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 1rem, 400, #FFF, 2rem);
+  }
 }

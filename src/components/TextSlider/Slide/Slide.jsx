@@ -1,4 +1,4 @@
-import styles from './slide.module.scss'
+import styles from './Slide.module.scss'
 
 const Slide = ({title, text, isCurrent, isAnimating, scrollDirection, className}) => {
     const slideClass = `${styles.slide} ${className ? styles[className] : ''}${isCurrent ? ` ${styles.current}` : ''}${

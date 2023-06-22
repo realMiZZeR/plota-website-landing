@@ -2,17 +2,33 @@
 @import '@/styles/mixins';
 
 .wrapper {
+  @extend %screen-scroll;
   height: 100vh;
   scroll-snap-align: start;
   background-color: #333333;
   padding: 200px 0;
+
+  @include setMedia('sm') {
+    padding: 100px 0;
+  }
 }
 
 .container {
   @extend %container;
-  justify-content: space-between;
   display: flex;
+  justify-content: space-between;
   height: 100%;
+
+  @include setMedia('sm') {
+    justify-content: center;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  @include setMedia('md') {
+    justify-content: space-between;
+    flex-direction: initial;
+  }
 }
 
 .text {
@@ -30,6 +46,14 @@
     color: #eee;
     font-size: 16px;
   }
+
+  @include setMedia('sm') {
+    margin-right: 0;
+  }
+
+  @include setMedia('lg') {
+    margin-right: 50px;
+  }
 }
 
 .counter {
@@ -40,8 +64,16 @@
 .slides {
   display: flex;
   flex-direction: column;
+  flex-grow: 10;
   position: relative;
   margin-bottom: 80px;
   max-width: 800px;
   width: 100%;
+}
+
+// Styles for "TextDescription" component.
+.textDescription {
+  @include setMedia('lg') {
+    @include setFont($poppins, 1rem, 400, #FFF);
+  }
 }

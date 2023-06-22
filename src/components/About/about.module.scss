@@ -2,7 +2,7 @@
 @import '@/styles/mixins';
 
 .wrapper {
-  scroll-snap-align: start;
+  @extend %screen-scroll;
   padding: 92px 0;
   background-color: #FFF;
 }
@@ -12,13 +12,39 @@
 
   display: flex;
   flex-direction: column;
+  height: 100%;
   gap: 120px;
+
+  @include setMedia('sm') {
+    gap: 60px;
+    justify-content: center;
+  }
+
+  @include setMedia('md') {
+    gap: 80px;
+  }
 }
 
 .text {
   margin-left: 40%;
+
+  @include setMedia('sm') {
+    margin-left: 0;
+  }
+
+  @include setMedia('md') {
+    margin-left: 40%;
+  }
 }
 
 .counters {
   width: 60%;
+
+  @include setMedia('sm') {
+    width: 100%;
+  }
+
+  @include setMedia('md') {
+    width: 60%;
+  }
 }

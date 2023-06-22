@@ -16,15 +16,38 @@
   transition: .4s ease;
   line-height: normal;
 
+  @include setMedia('sm') {
+    @include setFont($poppins, 1rem, 500, #949494, 2rem);
+  }
+
+  @include setMedia('md') {
+    @include setFont($poppins, 1.5rem, 500, #949494, 3rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 2rem, 500, #949494, 4rem);
+  }
+
   &.active {
-    font-size: 6rem;
-    font-weight: 600;
+    @include setFont($poppins, 6rem, 600, #949494);
     background-image: url(../../../assets/images/hero-background.png);
     background-repeat: repeat;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 100% 130%;
+
+    @include setMedia('sm') {
+      @include setFont($poppins, 1.5rem, 600, #333, 2rem);
+    }
+
+    @include setMedia('md') {
+      @include setFont($poppins, 2rem, 600, #333, 4rem);
+    }
+
+    @include setMedia('lg') {
+      @include setFont($poppins, 4rem, 600, #333, 6rem);
+    }
   }
 }
 
@@ -35,6 +58,14 @@
 
   & + & {
     margin-top: 50px;
+
+    @include setMedia('sm') {
+      margin-top: 30px;
+    }
+
+    @include setMedia('sm') {
+      margin-top: 50px;
+    }
   }
 
   &:hover .title {
@@ -51,6 +82,14 @@
   margin-right: 90px;
   position: relative;
   transition: .4s ease;
+
+  @include setMedia('sm') {
+    margin-right: 20px;
+  }
+
+  @include setMedia('md') {
+    margin-right: 40px;
+  }
 
   &.active {
     background-image: url('../../../assets/images/hero-background.png');

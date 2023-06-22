@@ -1,0 +1,168 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  border: 1px solid #333;
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 1;
+
+  @include setMedia('sm') {
+    padding: 10px;
+    height: 200px;
+  }
+
+  @include setMedia('md') {
+    padding: 10px;
+    height: 250px;
+  }
+
+  @include setMedia('lg') {
+    padding: 10px;
+    height: 300px;
+  }
+
+  @include setMedia('xl') {
+    height: 410px;
+    padding: 15px 20px;
+  }
+}
+
+.imagePreview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: max-height .5s ease;
+
+  @include setMedia('sm') {
+    max-height: 130px;
+    margin-bottom: 12px;
+  }
+
+  @include setMedia('md') {
+    max-height: 150px;
+    margin-bottom: 14px;
+  }
+
+  @include setMedia('lg') {
+    max-height: 160px;
+    margin-bottom: 18px;
+  }
+
+  @include setMedia('xl') {
+    max-height: 240px;
+    margin-bottom: 24px;
+  }
+}
+
+.imagePreview img {
+  @extend %img-fit;
+  object-fit: cover;
+}
+
+.background {
+  position: absolute;
+  bottom: -100%; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 1s bottom ease, .5s border-radius ease;
+}
+
+.wrapper:hover .background {
+  bottom: 0;
+  border-radius: 0;
+}
+
+.wrapper:hover .imagePreview {
+  max-height: 0;
+}
+
+.wrapper:hover .title,
+.wrapper:hover .description {
+  color: #FFF;
+  transition: 1s color ease;
+}
+
+.wrapper:hover .tag {
+  color: #FFF;
+  border: 1px solid #FFF;
+  transition: 1s color ease, 1s border ease;
+}
+
+.tag {
+  display: block;
+  width: min-content;
+  border: 1px solid #333;
+  border-radius: 50px;
+
+  @include setMedia('sm') {
+    @include setFont($poppins, .8rem, 400, #333, 1.2rem);
+    padding: .2rem .6rem;
+    margin-bottom: 20px;
+  }
+
+  @include setMedia('md') {
+    @include setFont($poppins, .8rem, 400, #333, 1.4rem);
+    padding: .2rem .6rem;
+    margin-bottom: 10px;
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, .8rem, 400, #333, 1.6rem);
+    padding: .2rem .6rem;
+    margin-bottom: 12px;
+  }
+
+  @include setMedia('xl') {
+    @include setFont($poppins, 1rem, 400, #333, 2rem);
+    padding: .4rem 1.2rem;
+    margin-bottom: 24px;
+  }
+}
+
+.title {
+  word-break: break-all;
+  line-height: 2rem;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+
+  @include setMedia('sm') {
+    @include setFont($poppins, 1.2rem, 600, #333, 1.4rem);
+    margin-bottom: 12px;
+  }
+
+  @include setMedia('md') {
+    @include setFont($poppins, 1rem, 600, #333, 1.4rem);
+    margin-bottom: 12px;
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 1rem, 600, #333, 2rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 1.5rem, 600, #333);
+  }
+}
+
+.description {
+  @include setMedia('sm') {
+    @include setFont($poppins, .8rem, 400, #333, 1.2rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 1rem, 400, #333, 1.6rem);
+  }
+
+  @include setMedia('xl') {
+    @include setFont($poppins, 1rem, 400, #333, 2rem);
+  }
+}

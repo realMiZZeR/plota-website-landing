@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
-import styles from './coursePreview.module.scss';
+import styles from './CoursePreview.module.scss';
 import Background from '@/assets/images/hero-background.png';
 
 const CoursePreview = ({ title, tag, description, imageSrc, imageAlt }) => {

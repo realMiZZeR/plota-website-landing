@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import CoursePreview from '../Preview/CoursePreview'
 
-import styles from './popularCourses.module.scss'
+import styles from './PopularCourses.module.scss'
 import ImageTest from '@/assets/images/course-preview-test.png'
 import TextDescription from '@/components/TextDescription/TextDescription'
 
@@ -26,6 +26,8 @@ const PopularCourses = () => {
         <div className={styles.head}>
           <h3 className={styles.title}>Popular courses</h3>
           <TextDescription
+            wrapperClassName={styles.wrapperTextDescription}
+            descriptionClassName={styles.textDescription}
             pretitle={'Our Customers'}
             description={'We do not have a fixed course program, all our training is fully adapted to the client. We also develop tailor-made courses for our clients.'}
             order={4}

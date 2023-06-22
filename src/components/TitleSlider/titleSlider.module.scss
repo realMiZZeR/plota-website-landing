@@ -16,6 +16,10 @@
   & > div {
     width: 100%;
   }
+
+  @include setMedia('sm') {
+    gap: 20px;
+  }
 }
 
 .counter {

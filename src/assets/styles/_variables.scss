@@ -9,7 +9,7 @@ $gray: #333;
 
 // Breakpoints.
 $breakpoints: (
-  'sm': 425px,
+  'sm': 320px,
   'md': 768px,
   'lg': 1024px,
   'xl': 1440px,
@@ -29,6 +29,18 @@ $breakpoints: (
 
 %container {
   margin: 0 auto;
+
+  @include setMedia('sm') {
+    max-width: 400px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+  }
+
+  @include setMedia('md') {
+    max-width: 700px;
+    padding: 0 20px;
+  }
 
   @include setMedia('lg') {
     max-width: 1200px;

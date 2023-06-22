@@ -1,0 +1,111 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.wrapper {
+  @extend %screen-scroll;
+  position: relative;
+  width: 100%;
+
+  @include setMedia('lg') {
+    padding: 80px 0;
+  }
+
+  @include setMedia('xl') {
+    padding: 96px 0;
+  }
+}
+
+.container {
+  @extend %container;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @include setMedia('sm') {
+    justify-content: center;
+  }
+
+  @include setMedia('md') {
+    justify-content: center;
+    gap: 40px;
+  }
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  @include setMedia('sm') {
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  @include setMedia('lg') {
+    margin-bottom: 100px;
+  }
+
+  @include setMedia('xl') {
+    margin-bottom: 150px;
+    align-items: center;
+    flex-direction: initial;
+  }
+}
+
+.title {
+  @include setFont($poppins, 3rem, 600, #333);
+  position: relative;
+  top: 30px;
+  line-height: 4.5rem;
+  text-transform: uppercase;
+  width: 100%;
+
+  @include setMedia('sm') {
+    @include setFont($poppins, 1rem, 600, #333, 1.5rem);
+    top: 0;
+    margin-bottom: 5px;
+  }
+  
+  @include setMedia('md') {
+    @include setFont($poppins, 2rem, 600, #333, 3rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 3rem, 600, #333, 4rem);
+  }
+}
+
+.courses {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: initial;
+  gap: 35px;
+
+  @include setMedia('sm') {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  @include setMedia('md') {
+    flex-direction: initial;
+    gap: 25px;
+  }
+}
+
+// Styles for "Text Description" component.
+.wrapperTextDescription {
+  //margin-left: 50%;
+}
+
+.textDescription {
+  @include setMedia('sm') {
+    @include setFont($poppins, .6rem, 400, #333, 1.2rem);
+  }
+
+  @include setMedia('md') {
+    @include setFont($poppins, 1rem, 400, #333, 2rem);
+  }
+}

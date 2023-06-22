@@ -38,10 +38,41 @@
 }
 
 .title {
+  display: block;
   @include setFont($poppins, 3rem, 600, #ffffff);
   margin-bottom: 10px;
+
+  @include setMedia('sm') {
+    @include setFont($poppins, 1.2rem, 600, #fff, 1.6rem);
+  }
+
+  @include setMedia('md') {
+    @include setFont($poppins, 1.6rem, 600, #fff, 2rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 3rem, 600, #fff, 4rem);
+    margin-bottom: 24px;
+  }
 }
 
 .text {
+  display: block;
   @include setFont($poppins, 1.5rem, 400, #ffffff, 3rem);
+
+  @include setMedia('sm') {
+    @include setFont($poppins, .6rem, 400, #fff, 1.2rem);
+  }
+
+  @include setMedia('md') {
+    @include setFont($poppins, .8rem, 400, #fff, 1.4rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 1rem, 400, #fff, 2rem);
+  }
+
+  @include setMedia('xl') {
+    @include setFont($poppins, 2rem, 400, #fff, 3rem);
+  }
 }

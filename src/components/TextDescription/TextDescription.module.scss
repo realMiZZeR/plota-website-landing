@@ -10,18 +10,62 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
+
+  @include setMedia('sm') {
+    margin-bottom: 8px;
+  }
+
+  @include setMedia('md') {
+    margin-bottom: 12px;
+  }
 }
 
 .headItem {
   @include setFont($poppins, 1rem, 400, #949494, 2rem);
   text-transform: uppercase;
+
+  @include setMedia('sm') {
+    @include setFont($poppins, .8rem, 400, #949494, 1.6rem);
+  }
+
+  @include setMedia('xl') {
+    @include setFont($poppins, 1rem, 400, #949494, 2rem);
+  }
 }
 
 .title {
   @include setFont($poppins, 2rem, 600, #333, 3rem);
   margin-bottom: 24px;
+
+  @include setMedia('sm') {
+    @include setFont($poppins, 1.6rem, 600, #333, 2rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 2rem, 600, #333, 3rem);
+  }
+
+  @include setMedia('xl') {
+    @include setFont($poppins, 3rem, 600, #333, 4rem);
+  }
 }
 
 .description {
   @include setFont($poppins, 1.5rem, 400, #333, 2.5rem);
+
+  @include setMedia('sm') {
+    @include setFont($poppins, .6rem, 400, #333, 1.2rem);
+  }
+
+  @include setMedia('md') {
+    @include setFont($poppins, .9rem, 400, #333, 1.6rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 1rem, 400, #333, 2rem);
+  }
+
+  @include setMedia('xl') {
+    @include setFont($poppins, 2rem, 400, #333, 3rem);
+  }
 }

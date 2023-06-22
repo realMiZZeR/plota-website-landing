@@ -14,4 +14,12 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 27px;
+
+    @include setMedia('sm') {
+        padding-top: 10px;
+    }
+
+    @include setMedia('md') {
+        padding-top: 27px;
+    }
 }

@@ -15,4 +15,12 @@
 
 .text {
   width: 75%;
+
+  @include setMedia('sm') {
+    width: 100%;
+  }
+
+  @include setMedia('md') {
+    width: 75%;
+  }
 }

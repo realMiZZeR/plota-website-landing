@@ -1,4 +1,4 @@
-import styles from './textSlider.module.scss'
+import styles from './TextSlider.module.scss'
 import Slide from "@/components/TextSlider/Slide/Slide";
 import ScrollableSlider from "@/hoc/ScrollableSlider";
 import TextDescription from "@/components/TextDescription/TextDescription";
@@ -8,6 +8,7 @@ const TextSlider = ({slides, currentSlide, isAnimating, scrollDirection, setCurr
         <article className={styles.wrapper}>
             <div className={styles.container}>
                 <TextDescription
+                    descriptionClassName={styles.textDescription}
                     description={'Only an integrated approach achieves the desired results'}
                     order={2}
                     pretitle={'Approach to work'}
@@ -43,7 +44,7 @@ const TextSliderWithSlides = ScrollableSlider(TextSlider, [
     },
     {
         id: 2,
-        title: 'Change-managemen',
+        title: 'Change-management',
         text: 'Organisationsentwicklung und Personalentwick-lung sollten als zwei Seiten derselben Medaille betrachtet und gestaltet werden.Erfolgreiche Veränderung passiert nicht von allein, sondern muss geplant und begleitet werden.Wir sorgen dafür, dass Veränderungsprozesse strategisch aufgesetzt und durchgeführt werden.',
     },
     {

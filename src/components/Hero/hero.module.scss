@@ -36,6 +36,16 @@
   animation-delay: 1s;
   opacity: 0;
 
+  @include setMedia('sm') {
+    @include setFont($poppins, 2.6rem, 700, #FFF, 3.4rem);
+    margin-bottom: 50px;
+  }
+
+  @include setMedia('md') {
+    @include setFont($poppins, 3rem, 700, #FFF, 4rem);
+    margin-bottom: 50px;
+  }
+
   @include setMedia('lg') {
     @include setFont($poppins, 4rem, 700, #FFF, 5.5rem);
     margin-bottom: 50px;

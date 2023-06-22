@@ -13,6 +13,18 @@
   justify-content: space-between;
   width: 100%;
   padding-top: 12px;
+
+  @include setMedia('sm') {
+    margin-bottom: 5px;
+  }
+
+  @include setMedia('md') {
+    margin-bottom: 20px;
+  }
+
+  @include setMedia('lg') {
+    padding-top: 4px;
+  }
 }
 
 .wrapper::before {
@@ -38,11 +50,31 @@
 .number {
   @include setFont($poppins, 8rem, 500, #333);
   @extend %not-observed;
+
+  @include setMedia('sm') {
+    @include setFont($poppins, 4rem, 400, #333, 6rem);
+  }
+
+  @include setMedia('md') {
+    @include setFont($poppins, 5.5rem, 400, #333, 6rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 6rem, 500, #333);
+  }
 }
 
 .description {
   @include setFont($poppins, 1rem, 400, #000, 2rem);
   @extend %not-observed;
+
+  @include setMedia('sm') {
+    @include setFont($poppins, .9rem, 400, #333, 1.5rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 0.9rem, 500, #333);
+  }
 }
 
 .observed {
