@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react"
 import Link from "next/link"
 
-import styles from "./header.module.scss"
+import styles from "./Header.module.scss"
 import HamburgerHeader from "@/components/Header/HamburgerHeader/HamburgerHeader";
 import DefaultHeader from "@/components/Header/DefaultHeader/DefaultHeader";
 

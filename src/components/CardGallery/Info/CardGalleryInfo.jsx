@@ -1,6 +1,6 @@
 import {useContext, useEffect, useState} from "react";
 import {CardContext} from "@/components/CardGallery/CardGallery";
-import styles from './cardGalleryInfo.module.scss'
+import styles from './CardGalleryInfo.module.scss'
 
 const CardGalleryInfo = ({ title, description, text }) => {
 

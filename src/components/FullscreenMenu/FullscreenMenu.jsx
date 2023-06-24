@@ -26,23 +26,25 @@ const FullscreenMenu = ({ isActive = false }) => {
 
   return (
     <div className={`${styles.wrapper} ${isActive ? styles.active : ''}`}>
-      <div className={styles.info}>
-        <span className={styles.lang}>eng</span> {/* todo: language component */}
-        <address className={styles.address}>
-          <p>Mustakivi Tee 25-623,</p>
-          <p>13912 Tallinn</p>
-          <p>Estland</p>
-        </address>
-        <SocialLink link={'/'} imageSrc={LinkedInIcon} />
+      <div className={styles.container}>
+        <div className={styles.info}>
+          <span className={styles.lang}>eng</span> {/* todo: language component */}
+          <address className={styles.address}>
+            <p>Mustakivi Tee 25-623,</p>
+            <p>13912 Tallinn</p>
+            <p>Estland</p>
+          </address>
+          <SocialLink link={'/'} imageSrc={LinkedInIcon} />
+        </div>
+        <nav className={styles.nav}>
+          {links.map(link => (
+            <Link className={getActiveLink(link.href)} key={link.id} href={link.href}>
+              <h2 className={styles.title}>{ link.title }</h2>
+              <span className={styles.order}>/0{ link.id }</span>
+            </Link>
+          ))}
+        </nav>
       </div>
-      <nav className={styles.nav}>
-        {links.map(link => (
-          <Link className={getActiveLink(link.href)} key={link.id} href={link.href}>
-            <h2 className={styles.title}>{ link.title }</h2>
-            <span className={styles.order}>/0{ link.id }</span>
-          </Link>
-        ))}
-      </nav>
     </div>
   )
 }

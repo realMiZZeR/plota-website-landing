@@ -1,19 +1,56 @@
-import { createContext, useRef, useState } from 'react'
+import {createContext, useEffect, useRef, useState} from 'react'
 import CardGalleryInfo from './Info/CardGalleryInfo'
 import CardGalleryItem from './Item/CardGalleryItem'
-import styles from './cardGallery.module.scss'
+import styles from './CardGallery.module.scss'
 import 'swiper/css';
 import {Swiper, SwiperSlide} from "swiper/react";
+import {getWindowBreakpoint} from "@/assets/scripts/getWindowBreakpoint";
 
 export const CardContext = createContext()
 
 const CardGallery = ({ title, cards = [] }) => {
 
   // Reference to swiper component.
-  const swiperRef = useRef();
+  const swiperRef = useRef()
 
+  const [slidesPerView, setSlidesPerView] = useState(4)
+  const [spaceBetweenSlides, setSpaceBetweenSlides] = useState(50)
   const [currentCard, setCurrentCard] = useState({title: '', description: '', text: ''})
-  const [showInfo, setShowInfo] = useState(false);
+  const [showInfo, setShowInfo] = useState(false)
+
+  // Slides per view by screen resolution.
+  const handleWindowResize = () => {
+    let windowWidth = window.innerWidth
+    let breakpoint = getWindowBreakpoint(windowWidth)
+
+    switch (breakpoint) {
+      case 'sm':
+        setSpaceBetweenSlides(10)
+        setSlidesPerView(1)
+        break
+      case 'md':
+        setSpaceBetweenSlides(20)
+        setSlidesPerView(1.5)
+        break
+      case 'lg':
+        setSpaceBetweenSlides(20)
+        setSlidesPerView(3)
+        break
+      case 'xl':
+        setSpaceBetweenSlides(50)
+        setSlidesPerView(4)
+        break
+    }
+  }
+
+  useEffect(() => {
+    handleWindowResize()
+    window.addEventListener('resize', handleWindowResize)
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize)
+    }
+  }, [])
 
   return (
     <article className={styles.wrapper}>
@@ -35,8 +72,8 @@ const CardGallery = ({ title, cards = [] }) => {
         </div>
         <CardContext.Provider value={{setCurrentCard, setShowInfo, showInfo}}>
           <Swiper
-            spaceBetween={50}
-            slidesPerView={4}
+            spaceBetween={spaceBetweenSlides}
+            slidesPerView={slidesPerView}
             navigation
             pagination={{ clickable: true }}
             scrollbar={{ draggable: false }}
@@ -44,7 +81,7 @@ const CardGallery = ({ title, cards = [] }) => {
           >
 
             {cards.map(card => (
-              <SwiperSlide key={card.id}>
+              <SwiperSlide key={card.id} className={styles.slideItem}>
                 <CardGalleryItem
                   title={card.title}
                   description={card.description}

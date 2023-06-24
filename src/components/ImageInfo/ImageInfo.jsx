@@ -1,6 +1,6 @@
 import Image from "node_modules/next/image";
 
-import styles from './imageInfo.module.scss'
+import styles from './ImageInfo.module.scss'
 
 const ImageInfo = ({ title, sentences = [], className = '', imageClassName = '', imageSrc = '', imageAlt = '' }) => {
 

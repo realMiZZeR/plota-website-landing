@@ -5,15 +5,11 @@ $appearDelay: 1s;
 $circleSize: 500px;
 
 .wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: absolute;
   top: -300px;
   right: 0;
   width: $circleSize;
   height: $circleSize;
-  padding: 72px;
   background-image: url('../../assets/images/hero-background.png');
   background-size: 100% 130%;
   background-repeat: no-repeat;
@@ -24,21 +20,12 @@ $circleSize: 500px;
   pointer-events: none;
 
   @include setMedia('sm') {
-    top: -100px;
-    right: -50px;
-    width: calc($circleSize - 300px);
-    height: calc($circleSize - 300px);
-    flex-direction: column-reverse;
-    padding: 20px;
-  }
-
-  @include setMedia('md') {
-    flex-direction: initial;
-    padding: 35px;
+    padding: 0;
   }
 
   @include setMedia('lg') {
-    padding: 40px;
+    padding-top: 27px;
+    padding-bottom: 72px;
   }
 }
 
@@ -52,6 +39,27 @@ $circleSize: 500px;
   pointer-events: all;
 }
 
+.container {
+  @extend %container;
+  display: flex;
+  height: 100%;
+
+  @include setMedia('sm') {
+    flex-direction: column-reverse;
+  }
+
+  @include setMedia('md') {
+
+    align-items: center;
+  }
+
+  @include setMedia('lg') {
+    justify-content: center;
+    align-items: center;
+    flex-direction: initial;
+  }
+}
+
 .lang {
   @include setFont($poppins, 1rem, 400, #FFF, 2rem);
   text-transform: uppercase;
@@ -60,9 +68,8 @@ $circleSize: 500px;
 .info {
   @include setFont($poppins, 1rem, 400, #FFF, 2rem);
   display: flex;
-  flex-direction: column;
   width: 100%;
-  height: 100%;
+
   opacity: 0;
   transform: translateY(-10px);
   transition: .5s transform ease, .5s opacity ease;
@@ -74,9 +81,8 @@ $circleSize: 500px;
     flex-direction: row;
   }
 
-  @include setMedia('md') {
+  @include setMedia('lg') {
     height: 100%;
-    margin-top: initial;
     flex-direction: column;
   }
 }
@@ -158,8 +164,9 @@ $circleSize: 500px;
   }
 
   @include setMedia('lg') {
-    @include setFont($poppins, 2rem, 700, #FFF, 4rem);
+    @include setFont($poppins, 2rem, 700, #FFF, 5rem);
   }
+
 }
 
 .link.active .title, .title:hover {

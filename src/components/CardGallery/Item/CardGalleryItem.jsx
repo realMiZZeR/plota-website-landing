@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { CardContext } from '../CardGallery';
 import Image from 'node_modules/next/image';
-import styles from './cardGalleryItem.module.scss'
+import styles from './CardGalleryItem.module.scss'
 
-const CardGalleryItem = ({ className, imageSrc, title, description, text }) => {
+const CardGalleryItem = ({ imageSrc, title, description, text, className = '' }) => {
 
   const {setCurrentCard, setShowInfo} = useContext(CardContext)
 

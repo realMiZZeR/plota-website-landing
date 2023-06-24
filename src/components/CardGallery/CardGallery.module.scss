@@ -1,0 +1,126 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+  scroll-snap-align: start;
+  background-color: #F3F3F3;
+  padding: 84px 0;
+}
+
+.container {
+  @extend %container;
+}
+
+.head {
+  display: flex;
+  width: 100%;
+  margin-bottom: 42px;
+
+  @include setMedia('sm') {
+    align-items: flex-end;
+    flex-direction: column;
+  }
+
+  @include setMedia('lg') {
+    flex-direction: initial;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+
+  @include setMedia('sm') {
+    @include setFont($poppins, 1.6rem, 600, #000, 2rem);
+    text-align: end;
+    margin-bottom: 15px;
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 3rem, 600, #000, 4rem);
+  }
+}
+
+.buttons {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @include setMedia('sm') {
+
+  }
+
+  @include setMedia('lg') {
+
+  }
+}
+
+.button {
+  @extend %reset-button;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #949494;
+  border-radius: 100%;
+  overflow: hidden;
+  transition: .5s ease border;
+
+  @include setMedia('sm') {
+    width: 35px;
+    height: 35px;
+  }
+
+  @include setMedia('lg') {
+    width: 46px;
+    height: 46px;
+  }
+}
+
+.button:first-child svg {
+  transform: rotate(180deg);
+}
+
+.button svg {
+  @include setMedia('sm') {
+    width: 15px;
+    height: 15px;
+  }
+
+  @include setMedia('lg') {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.button path {
+  stroke: #949494;
+  transition: .5s ease stroke;
+}
+
+.button:hover {
+  border: 1px solid #333;
+}
+
+.button:hover path {
+  stroke: #333;
+}
+
+.slideItem {
+  height: 436px!important;
+}
+
+.slideItem:nth-child(even) {
+  height: 400px!important;
+
+  @include setMedia('sm') {
+    height: 436px!important;
+  }
+
+  @include setMedia('lg') {
+    height: 400px!important;
+  }
+}
