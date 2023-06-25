@@ -5,6 +5,7 @@ import styles from './CardGallery.module.scss'
 import 'swiper/css';
 import {Swiper, SwiperSlide} from "swiper/react";
 import {getWindowBreakpoint} from "@/assets/scripts/getWindowBreakpoint";
+import {createBreakpointObject, useSwiperResize} from "@/hooks/useSwiperResize";
 
 export const CardContext = createContext()
 
@@ -13,44 +14,13 @@ const CardGallery = ({ title, cards = [] }) => {
   // Reference to swiper component.
   const swiperRef = useRef()
 
-  const [slidesPerView, setSlidesPerView] = useState(4)
-  const [spaceBetweenSlides, setSpaceBetweenSlides] = useState(50)
   const [currentCard, setCurrentCard] = useState({title: '', description: '', text: ''})
   const [showInfo, setShowInfo] = useState(false)
 
-  // Slides per view by screen resolution.
-  const handleWindowResize = () => {
-    let windowWidth = window.innerWidth
-    let breakpoint = getWindowBreakpoint(windowWidth)
-
-    switch (breakpoint) {
-      case 'sm':
-        setSpaceBetweenSlides(10)
-        setSlidesPerView(1)
-        break
-      case 'md':
-        setSpaceBetweenSlides(20)
-        setSlidesPerView(1.5)
-        break
-      case 'lg':
-        setSpaceBetweenSlides(20)
-        setSlidesPerView(3)
-        break
-      case 'xl':
-        setSpaceBetweenSlides(50)
-        setSlidesPerView(4)
-        break
-    }
-  }
-
-  useEffect(() => {
-    handleWindowResize()
-    window.addEventListener('resize', handleWindowResize)
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize)
-    }
-  }, [])
+  // Adaptive swiper.
+  const viewBreakpoints = createBreakpointObject(1, 1.5, 3, 4)
+  const spaceBreakpoints = createBreakpointObject(10, 20, 20, 50)
+  const { slidesPerView, spaceBetweenSlides } = useSwiperResize(viewBreakpoints, spaceBreakpoints)
 
   return (
     <article className={styles.wrapper}>
@@ -79,7 +49,6 @@ const CardGallery = ({ title, cards = [] }) => {
             scrollbar={{ draggable: false }}
             onSwiper={swiper => swiperRef.current = swiper}
           >
-
             {cards.map(card => (
               <SwiperSlide key={card.id} className={styles.slideItem}>
                 <CardGalleryItem

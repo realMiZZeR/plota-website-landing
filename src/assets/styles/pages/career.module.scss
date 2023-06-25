@@ -1,0 +1,41 @@
+@import '@/styles/variables';
+@import '@/styles/mixins';
+
+.firstImageInfoImage {
+
+  @include setMedia('sm') {
+    margin-top: 0;
+    height: 100%;
+  }
+
+  @include setMedia('lg') {
+    margin-top: auto!important;
+    height: 50%!important;
+  }
+}
+
+.secondImageInfoWrapper {
+  background-color: #F3F3F3;
+
+  @include setMedia('sm') {
+
+  }
+
+  @include setMedia('lg') {
+    padding: 200px 0!important;
+  }
+}
+
+.secondImageInfoContainer {
+  @include setMedia('sm') {
+    flex-direction: column;
+  }
+
+  @include setMedia('lg') {
+    flex-direction: row-reverse!important;
+  }
+}
+
+.secondImageInfoImage {
+
+}

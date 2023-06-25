@@ -20,8 +20,6 @@ export function getWindowBreakpoint(windowWidth) {
     if (windowWidth >= 1440) {
       return 'xl'
     }
-
-    throw new TypeError(`Window breakpoint like ${windowWidth} doesn't exist.`)
   } catch (error) {
     console.error(error.message)
   }

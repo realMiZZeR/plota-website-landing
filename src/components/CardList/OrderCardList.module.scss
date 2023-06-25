@@ -9,18 +9,31 @@
 
 .container {
   @extend %container;
+  height: 100%;
 }
 
 .title {
-  @include setFont($poppins, 3rem, 700, #FFF);
-  line-height: 4.5rem;
-  margin-bottom: 104px;
   text-align: end;
+
+  @include setMedia('sm') {
+    @include setFont($poppins, 2rem, 700, #FFF, 2.5rem);
+    margin-bottom: 50px;
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 3rem, 700, #FFF, 4.5rem);
+    margin-bottom: 104px;
+  }
 }
 
-.content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
+.slider {
+  height: 100%;
+}
+
+.sliderItem {
+  height: 500px!important;
+}
+
+.slideNext {
+
 }

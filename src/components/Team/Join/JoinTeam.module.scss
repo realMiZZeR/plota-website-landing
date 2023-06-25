@@ -6,11 +6,11 @@
   scroll-snap-align: start;
   background-color: #F3F3F3;
 
-  @include setMedia('lg') {
-    padding: 70px 0;
+  @include setMedia('sm') {
+    padding: 90px 0;
   }
 
-  @include setMedia('xl') {
+  @include setMedia('lg') {
     padding: 89px 0;
   }
 }
@@ -24,11 +24,13 @@
   justify-content: space-between;
   align-items: center;
 
-  @include setMedia('lg') {
-    margin-bottom: 40px;
+  @include setMedia('sm') {
+    align-items: initial;
+    flex-direction: column;
   }
 
-  @include setMedia('xl') {
+  @include setMedia('lg') {
+    flex-direction: initial;
     margin-bottom: 90px;
   }
 }
@@ -37,11 +39,12 @@
   width: 100%;
   text-transform: uppercase;
 
-  @include setMedia('lg') {
-    @include setFont($poppins, 3rem, 700, #000);
+  @include setMedia('sm') {
+    @include setFont($poppins, 2rem, 700, #000);
+    margin-bottom: 20px;
   }
 
-  @include setMedia('xl') {
+  @include setMedia('lg') {
     @include setFont($poppins, 3rem, 700, #000);
   }
 }
@@ -49,8 +52,13 @@
 .description {
   flex-shrink: 2;
 
+  @include setMedia('sm') {
+    @include setFont($poppins, .8rem, 400, #000, 1.6rem);
+    margin-bottom: 30px;
+  }
+
   @include setMedia('lg') {
-    @include setFont($poppins, 1rem, 400, #000, 2rem);
+    @include setFont($poppins, .9rem, 400, #000, 2rem);
   }
 
   @include setMedia('xl') {
@@ -60,5 +68,12 @@
 
 .vacancies {
   position: relative;
-  padding-left: 40%;
+
+  @include setMedia('sm') {
+    padding: 0;
+  }
+
+  @include setMedia('lg') {
+    padding-left: 40%;
+  }
 }

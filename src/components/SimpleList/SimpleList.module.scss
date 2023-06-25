@@ -4,7 +4,11 @@
 .wrapper {
   @extend %screen-scroll;
   background-color: #F3F3F3;
-  
+
+  @include setMedia('sm') {
+    padding-top: 70px;
+    padding-bottom: 21px;
+  }
 
   @include setMedia('lg'){
     padding-top: 70px;
@@ -22,12 +26,15 @@
 }
 
 .title {
-  @include setFont($poppins, 3rem, 700, #000);
-  line-height: 4.5rem;
-  
+  margin-bottom: 60px;
+
+  @include setMedia('sm') {
+    @include setFont($poppins, 2rem, 700, #000, 3rem);
+
+  }
 
   @include setMedia('lg') {
-    margin-bottom: 60px;
+    @include setFont($poppins, 3rem, 700, #000, 4.5rem);
   }
 
   @include setMedia('xl') {

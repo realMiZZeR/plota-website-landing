@@ -1,3 +1,4 @@
+import styles from '@/styles/pages/career.module.scss'
 import Head from 'next/head'
 import Header from '@/components/Header/Header'
 import Hero from '@/components/Hero/Hero';
@@ -17,6 +18,9 @@ const cards = [
   { id: 1, order: '01', title: 'Together is better', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. '},
   { id: 2, order: '01', title: 'Together is better', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. '},
   { id: 3, order: '01', title: 'Together is better', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. '},
+  { id: 4, order: '01', title: 'Together is better', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. '},
+  { id: 5, order: '01', title: 'Together is better', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. '},
+  { id: 6, order: '01', title: 'Together is better', description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. '},
 ]
 
 const Career = () => {
@@ -36,10 +40,14 @@ const Career = () => {
           hasDecorations={false}
         />
         <ImageInfo
+          imageClassName={styles.firstImageInfoImage}
           title={<>Only people who love their work can produce a quality product</>}
           sentences={['Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ssssssssssssssssssAenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.']}
         />
         <ImageInfo
+          className={styles.secondImageInfoWrapper}
+          containerClassName={styles.secondImageInfoContainer}
+          imageClassName={styles.secondImageInfoImage}
           title={<>Only people who love their work can produce a quality product</>}
           sentences={['Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. ssssssssssssssssssAenean massa. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.']}
         />

@@ -1,5 +1,5 @@
-import Vacancy from '@/components/Vacancy/Vacancy';
-import styles from './joinTeam.module.scss'
+import TeamVacancy from '@/components/Team/TeamVacancy/TeamVacancy';
+import styles from './JoinTeam.module.scss'
 
 const JoinTeam = () => {
 
@@ -11,14 +11,14 @@ const JoinTeam = () => {
           <p className={styles.description}>If you're innovative, creative, and thrive in a team-oriented environment, we'd love to hear from you!</p>
         </div>
         <div className={styles.vacancies}>
-          <Vacancy
+          <TeamVacancy
             title={'Developer'}
             description={''}
             location={''}
             linkHref={'#'}
             linkName={'Application'}
           />
-          <Vacancy
+          <TeamVacancy
             title={'Scrum Master'}
             description={'Wenn Wissensmanagement nicht strategisch geplant und an den jeweiligen Reifegrad von Organisationen angepasst wird'}
             location={'Estonia, Tallinn'}

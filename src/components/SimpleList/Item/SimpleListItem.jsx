@@ -1,5 +1,5 @@
 import Image from 'node_modules/next/image'
-import styles from './simpleListItem.module.scss'
+import styles from './SimpleListItem.module.scss'
 
 const SimpleListItem = ({ title, description, imageSrc = '', imageAlt = '' }) => {
 

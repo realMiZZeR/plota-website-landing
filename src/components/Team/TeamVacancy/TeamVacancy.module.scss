@@ -3,7 +3,7 @@
 
 .vacancy {
   transform: rotate(0);
-  transition: transform .5 ease;
+  transition: transform .5s ease;
 }
 
 .arrow {
@@ -26,30 +26,38 @@
   border-bottom: 1px solid #000;
   width: 100%;
 
-  @include setMedia('lg') {
+  @include setMedia('sm') {
     padding: 4px 0;
   }
 
-  @include setMedia('xl') {
+  @include setMedia('lg') {
     padding: 16px 0;
   }
 }
 
 .title {
-  @include setMedia('lg') {
-    @include setFont($poppins, 2rem, 700, #000, 3rem);
+  @include setMedia('sm') {
+    @include setFont($poppins, 1.5rem, 700, #000, 3rem);
   }
 
-  @include setMedia('xl') {
+  @include setMedia('lg') {
     @include setFont($poppins, 3rem, 700, #000, 4rem);
   }
 }
 
 .content {
-  margin-top: 56px;
+
   max-height: 0;
   overflow: hidden;
   transition: max-height .5s ease;
+
+  @include setMedia('sm') {
+    margin-top: 20px;
+  }
+
+  @include setMedia('lg') {
+    margin-top: 56px;
+  }
 }
 
 .vacancy.active .content {
@@ -57,9 +65,15 @@
 }
 
 .description {
-  @include setFont($poppins, 1rem, 400, #333);
-  line-height: 2rem;
   width: 380px;
+
+  @include setMedia('sm') {
+    @include setFont($poppins, .8rem, 400, #333, 1.6rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 1rem, 400, #333, 2rem);
+  }
 }
 
 .footer {
@@ -70,18 +84,32 @@
 }
 
 .location {
-  @include setFont($poppins, 1rem, 600, $gray);
-  line-height: 2rem;
+
+
+  @include setMedia('sm') {
+    @include setFont($poppins, .8rem, 600, $gray, 1.6rem);
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 1rem, 600, $gray, 2rem);
+  }
 }
 
 .link {
-  @include setFont($poppins, 1rem, 400, $gray);
   border: 1px solid $gray;
   border-radius: 50px;
-  line-height: 2rem;
-  padding: 4px 24px;
   text-decoration: none;
   transition: background .3s ease, color .3s ease;
+
+  @include setMedia('sm') {
+    @include setFont($poppins, .8rem, 400, $gray, 1.6rem);
+    padding: 4px 10px;
+  }
+
+  @include setMedia('lg') {
+    @include setFont($poppins, 1rem, 400, $gray, 2rem);
+    padding: 4px 24px;
+  }
 }
 
 .link:hover {

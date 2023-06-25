@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Link from 'node_modules/next/link';
 
-import styles from './vacancy.module.scss'
+import styles from './TeamVacancy.module.scss'
 
-const Vacancy = ({ title, description, location, linkHref, linkName }) => {
+const TeamVacancy = ({ title, description, location, linkHref, linkName }) => {
   
   const [isOpened, setIsOpened] = useState(false)
 
@@ -30,4 +30,4 @@ const Vacancy = ({ title, description, location, linkHref, linkName }) => {
   )
 }
 
-export default Vacancy;
+export default TeamVacancy;
