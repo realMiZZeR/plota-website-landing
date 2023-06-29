@@ -27,7 +27,7 @@ const TextSlider = ({slides, currentSlide, isAnimating, scrollDirection, setCurr
                     ))}
                 </div>
             </div>
-            <div className={styles.container}>
+            <div className={`${styles.container} ${styles.mobile}`}>
                 <div className={styles.counter}>
                     <span>{currentSlide + 1}</span> / <span>{slides.length}</span>
                 </div>
@@ -57,6 +57,6 @@ const TextSliderWithSlides = ScrollableSlider(TextSlider, [
         title: 'Person',
         text: 'Im Fokus unserer ganzheitlichen Betrachtung steht der Mensch – die gezielte Förderung und Weiterentwicklung seiner Potenziale und Kompeten- zen ist Schlüsselelement organisationalen Erfolgs und individueller Zufriedenheit.',
     },
-])
+], 'text')
 
 export default TextSliderWithSlides

@@ -35,7 +35,7 @@ $circleSize: 500px;
   width: 100vw;
   height: 100vh;
   border-radius: 0;
-  opacity:  1;
+  opacity: 1;
   pointer-events: all;
 }
 
@@ -123,6 +123,10 @@ $circleSize: 500px;
   animation: appear 1s ease forwards 1s;
 }
 
+.wrapper.active .link {
+  pointer-events: all;
+}
+
 @keyframes appear {
   100% {
     opacity: 1;
@@ -135,6 +139,7 @@ $circleSize: 500px;
   justify-content: space-between;
   @extend %reset-link;
   text-decoration: none;
+  pointer-events: none;
 }
 
 .link + .link {

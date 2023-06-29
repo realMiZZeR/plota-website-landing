@@ -1,12 +1,6 @@
 import styles from './sliderNav.module.scss'
 
-// переделать верстку линий так, чтобы высота высчитывалась автоматически, вне зависимости от высоты и позиции контента по индексу
-
-// решить проблему с длинными заголовками
-
-// сделать анимацию перетекания цвета линии от слайда к слайду
-
-const SliderNav = ({setCurrentSlide, currentSlide}) => {
+const SliderNav = ({setCurrentSlide, currentSlide, isAnimating, scrollDirection}) => {
     const titles = [
         {
             id: 1,
@@ -18,7 +12,7 @@ const SliderNav = ({setCurrentSlide, currentSlide}) => {
         },
         {
             id: 3,
-            title: 'Qualified tutors',
+            title: 'Individual approach',
         },
         {
             id: 4,
@@ -26,20 +20,19 @@ const SliderNav = ({setCurrentSlide, currentSlide}) => {
         },
         {
             id: 5,
-            title: 'Easy learning',
+            title: 'Individual approach',
         },
     ]
 
     return (
         <div className={styles.nav}>
             <div className={styles.titles}>
-                {titles.map(({id, title}, index) => <div className={styles.row} key={id}
-                                                         onClick={() => setCurrentSlide(index)}>
+                {titles.map(({id, title}, index) => <div
+                    className={`${styles.row} ${currentSlide === index ? styles.active : ''}`} key={id}
+                    onClick={() => setCurrentSlide(index)}>
                     <div
-                        className={`${styles.circle} ${styles.line} ${currentSlide === index ? styles.active : ''} ${index === titles.length - 1 ? styles.last : ''} ${index === 0 ? styles.first : ''}`}
+                        className={`${styles.circle} ${currentSlide === index ? styles.active : ''}`}
                     >
-                        {/*{index < titles.length - 1 ? <div*/}
-                        {/*    className={`${styles.line} ${currentSlide === index ? styles.active : ''}`}></div> : <></>}*/}
                     </div>
                     <h4 className={`${styles.title} ${currentSlide === index ? styles.active : ''}`}
                     >{title}</h4>

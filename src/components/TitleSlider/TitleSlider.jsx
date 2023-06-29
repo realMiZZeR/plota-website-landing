@@ -15,7 +15,8 @@ const TitleSlider = ({slides, currentSlide, isAnimating, scrollDirection, setCur
                 />
             </div>
             <div className={styles.container}>
-                <SliderNav setCurrentSlide={setCurrentSlide} currentSlide={currentSlide}/>
+                <SliderNav setCurrentSlide={setCurrentSlide} currentSlide={currentSlide} isAnimating={isAnimating}
+                           scrollDirection={scrollDirection}/>
                 <div className={styles.slides}>
                     {slides.map(({id, text}, index) => (
                         <Slide
@@ -54,6 +55,6 @@ const TitleSliderWithSlides = ScrollableSlider(TitleSlider, [
         id: 5,
         text: '5 The Ontron is a hybrid work format. For example, the branding team is almost all in Berlin and meets on Wednesdays and Fridays at the office. ',
     },
-])
+], 'title')
 
 export default TitleSliderWithSlides

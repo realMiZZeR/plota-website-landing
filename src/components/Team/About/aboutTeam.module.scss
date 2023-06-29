@@ -4,15 +4,35 @@
 .wrapper {
   @extend %screen-scroll;
   padding: 92px 0;
-  background-color: #FFF;
+  background-color: #EEEEEE;
+}
+
+.title-container {
+  @extend %container;
+  display: flex;
+
+  width: 100%;
+
+  & > div {
+    width: 100%;
+  }
 }
 
 .container {
   @extend %container;
   display: flex;
-  gap: 41px;
   width: 100%;
   height: 100%;
+  @include setMedia('sm') {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  @include setMedia('lg') {
+    flex-direction: initial;
+    justify-content: space-between;
+    gap: 41px;
+  }
 }
 
 .image {
@@ -22,13 +42,14 @@
   background-color: #E0E0E0;
   border-radius: 12px;
   overflow: hidden;
+  min-height: 100px;
 
   @include setMedia('lg') {
     flex-shrink: .6;
   }
 
   @include setMedia('xl') {
-    flex-shrink: .5;
+    flex-shrink: .4;
   }
 }
 
@@ -41,50 +62,56 @@
 }
 
 .title {
-  text-transform: uppercase;
-  margin-bottom: 24px;
 
-  @include setMedia('lg') {
-    @include setFont($poppins, 3rem, 700, #000);
+
+  @include setMedia('sm') {
+    @include setFont($poppins, 2.2rem, 600, #333);
   }
 
-  @include setMedia('xl') {
-    @include setFont($poppins, 3.5rem, 700, #000);
+  @include setMedia('lg') {
+    @include setFont($poppins, 3rem, 600, #333);
+    margin-bottom: 24px;
   }
 }
 
 .description {
-  margin-bottom: 76px;
+
+
+  @include setMedia('sm') {
+    @include setFont($poppins, 1rem, 400, #000, 2rem);
+    margin-bottom: 30px;
+  }
 
   @include setMedia('lg') {
     @include setFont($poppins, 1rem, 400, #000, 2rem);
-  }
-
-  @include setMedia('xl') {
-    @include setFont($poppins, 1.3rem, 400, #000, 2.8rem);
+    margin-bottom: 76px;
   }
 }
 
 .link {
-  display: block;
+  display: flex;
+  align-items: center;
   width: fit-content;
-  border: 1px solid $gray;
-  border-radius: 50px;
+  border-bottom: 1px solid #333;
   text-decoration: none;
   transition: background .3s ease, color .3s ease;
 
-  @include setMedia('lg') {
-    @include setFont($poppins, 1rem, 400, #000, 2rem);
-    padding: 4px 24px;
+
+  span {
+    @include setMedia('sm') {
+      margin-right: 30px;
+    }
+
+    @include setMedia('lg') {
+      margin-right: 50px;
+    }
+  }
+
+  @include setMedia('sm') {
+    @include setFont($poppins, .8rem, 400, #333, 2rem);
   }
 
   @include setMedia('xl') {
-    @include setFont($poppins, 1.3rem, 400, #000, 2.2rem);
-    padding: 12px 24px;
+    @include setFont($poppins, 1rem, 400, #333, 2.2rem);
   }
-}
-
-.link:hover {
-  color: #FFF;
-  background-color: $gray;
 }

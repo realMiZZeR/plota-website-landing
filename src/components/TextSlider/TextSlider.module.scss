@@ -18,7 +18,6 @@
   display: flex;
   justify-content: space-between;
   height: 100%;
-
   @include setMedia('sm') {
     justify-content: center;
     flex-direction: column;
@@ -31,9 +30,17 @@
   }
 }
 
+.container.mobile {
+  @include setMedia('sm') {
+    justify-content: space-between;
+    flex-direction: initial;
+  }
+}
+
 .text {
   max-width: 280px;
   margin-right: 20px;
+
   & > p {
     color: #eee;
     font-size: 18px;

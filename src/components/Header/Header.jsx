@@ -13,7 +13,7 @@ const Header = ({color = "white"}) => {
   // #F0643C - color of triangle in logo
 
   const handleHamburgerHeader = (e) => {
-
+    console.dir(window.scrollY)
   }
 
   useEffect(() => {
